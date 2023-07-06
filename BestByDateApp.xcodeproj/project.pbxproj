@@ -13,6 +13,11 @@
 		26D2CD752A4F243B00187BA7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26D2CD742A4F243B00187BA7 /* Preview Assets.xcassets */; };
 		26D2CD772A4F243B00187BA7 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2CD762A4F243B00187BA7 /* Persistence.swift */; };
 		26D2CD7A2A4F243B00187BA7 /* BestByDateApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26D2CD782A4F243B00187BA7 /* BestByDateApp.xcdatamodeld */; };
+		26D2CD842A4F254B00187BA7 /* BestByDateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2CD832A4F254B00187BA7 /* BestByDateItem.swift */; };
+		26D2CD862A4F276B00187BA7 /* BestByDateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2CD852A4F276B00187BA7 /* BestByDateListView.swift */; };
+		26D2CD882A4F285300187BA7 /* BestByDateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2CD872A4F285300187BA7 /* BestByDateViewModel.swift */; };
+		26EF99472A50703E0096C3D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EF99462A50703E0096C3D5 /* AppDelegate.swift */; };
+		26EF994A2A5078630096C3D5 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EF99492A5078630096C3D5 /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +28,11 @@
 		26D2CD742A4F243B00187BA7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		26D2CD762A4F243B00187BA7 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		26D2CD792A4F243B00187BA7 /* BestByDateApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BestByDateApp.xcdatamodel; sourceTree = "<group>"; };
+		26D2CD832A4F254B00187BA7 /* BestByDateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateItem.swift; sourceTree = "<group>"; };
+		26D2CD852A4F276B00187BA7 /* BestByDateListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateListView.swift; sourceTree = "<group>"; };
+		26D2CD872A4F285300187BA7 /* BestByDateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateViewModel.swift; sourceTree = "<group>"; };
+		26EF99462A50703E0096C3D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		26EF99492A5078630096C3D5 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,10 +67,14 @@
 			children = (
 				26D2CD6D2A4F243600187BA7 /* BestByDateAppApp.swift */,
 				26D2CD6F2A4F243600187BA7 /* ContentView.swift */,
+				26D2CD822A4F251400187BA7 /* Model */,
+				26D2CD812A4F250700187BA7 /* ViewModel */,
+				26D2CD802A4F24FB00187BA7 /* View */,
 				26D2CD712A4F243B00187BA7 /* Assets.xcassets */,
 				26D2CD762A4F243B00187BA7 /* Persistence.swift */,
 				26D2CD782A4F243B00187BA7 /* BestByDateApp.xcdatamodeld */,
 				26D2CD732A4F243B00187BA7 /* Preview Content */,
+				26EF99462A50703E0096C3D5 /* AppDelegate.swift */,
 			);
 			path = BestByDateApp;
 			sourceTree = "<group>";
@@ -71,6 +85,31 @@
 				26D2CD742A4F243B00187BA7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		26D2CD802A4F24FB00187BA7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				26D2CD852A4F276B00187BA7 /* BestByDateListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		26D2CD812A4F250700187BA7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				26D2CD872A4F285300187BA7 /* BestByDateViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		26D2CD822A4F251400187BA7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				26D2CD832A4F254B00187BA7 /* BestByDateItem.swift */,
+				26EF99492A5078630096C3D5 /* NotificationManager.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,10 +182,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26EF99472A50703E0096C3D5 /* AppDelegate.swift in Sources */,
+				26D2CD842A4F254B00187BA7 /* BestByDateItem.swift in Sources */,
 				26D2CD772A4F243B00187BA7 /* Persistence.swift in Sources */,
+				26EF994A2A5078630096C3D5 /* NotificationManager.swift in Sources */,
 				26D2CD702A4F243600187BA7 /* ContentView.swift in Sources */,
 				26D2CD7A2A4F243B00187BA7 /* BestByDateApp.xcdatamodeld in Sources */,
 				26D2CD6E2A4F243600187BA7 /* BestByDateAppApp.swift in Sources */,
+				26D2CD882A4F285300187BA7 /* BestByDateViewModel.swift in Sources */,
+				26D2CD862A4F276B00187BA7 /* BestByDateListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
