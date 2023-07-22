@@ -55,7 +55,7 @@ class BestByDateViewModel: ObservableObject {
                     identifier: item.id.uuidString,
                     title: item.name,
                     body: "",
-                    timeInterval: 10,
+                    timeInterval: createTimeInterval(notificationDate: item.bestByDate),
                     isRepeat: false,
                     isNotify: item.isNotify
                 )
@@ -64,4 +64,26 @@ class BestByDateViewModel: ObservableObject {
         return notificationInfo
     }
 
+    /// Push通知する時間を生成する
+    /// 期限の3日前 10:00に設定。処理失敗時は-1を返す
+    private func createTimeInterval(notificationDate: Date) -> Int {
+        let today = Date()
+        guard let bestByDateTimeInterval = dateFormatter.date(from: dateFormatter.string(from: notificationDate))?.timeIntervalSince1970,
+              let nowDateTimeInterval = dateFormatter.date(from: dateFormatter.string(from: today))?.timeIntervalSince1970 else {
+            return -1
+        }
+        print("bestByDateTimeInterval - nowDateTimeInterval = \(String(describing: bestByDateTimeInterval - nowDateTimeInterval))")
+        // 何日前に通知するか
+        // TODO: ここでは現状仕様として3日前
+        let notifyDayToSec = (60 * 60 * 24) * 3
+        // 通知したい時間(秒)
+        // TODO: ここでは現状仕様として10時としている
+        let notifyTimeToSec = 60 * 60 * 10
+        // 現在時間→秒
+        let currentTimeToSec = (Calendar.current.component(.hour, from: today) * 60 * 60) + (Calendar.current.component(.minute, from: today) * 60)
+        print("\(String(describing: Int(bestByDateTimeInterval - nowDateTimeInterval) - notifyDayToSec + notifyTimeToSec - currentTimeToSec))")
+
+        // (期限日 - 今日 - 通知したい日) + 通知したい時間 - 現在時間
+        return (Int(bestByDateTimeInterval - nowDateTimeInterval) - notifyDayToSec) + notifyTimeToSec - currentTimeToSec
+    }
 }
