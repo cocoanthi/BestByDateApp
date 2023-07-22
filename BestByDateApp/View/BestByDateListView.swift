@@ -7,7 +7,9 @@ struct BestByDateListView: View {
     private var items: FetchedResults<Item>
     
     @StateObject var bestByDateViewModel: BestByDateViewModel = BestByDateViewModel()
-    
+    // 3日前に通知するため、現在日から４日後までは選択できないようにする
+    let minDate = Calendar.current.date(byAdding: .day, value: 4, to: Date())!
+
     var body: some View {
         Text("期限切れリマインダー")
         NavigationView {
@@ -19,6 +21,7 @@ struct BestByDateListView: View {
                         Spacer()
                         DatePicker(
                             selection: $bestByDateViewModel.bestByDateItemList[index].bestByDate,
+                            in: minDate...,
                             displayedComponents: [.date],
                             label: { Text("") }
                         )
