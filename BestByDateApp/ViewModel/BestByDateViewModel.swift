@@ -15,6 +15,7 @@ class BestByDateViewModel: ObservableObject {
     
     init() {
         let bestByDateItemList: [BestByDateItem] = [
+            // TODO: DatePickerで選択してない場合は現在時間で処理してしまう。テスト用なのでそのうち削除
             BestByDateItem(name: "砂糖", bestByDate: Date()),
             BestByDateItem(name: "塩", bestByDate: Date()),
             BestByDateItem(name: "酢", bestByDate: Date()),
