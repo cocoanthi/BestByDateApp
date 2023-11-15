@@ -14,15 +14,14 @@ class BestByDateViewModel: ObservableObject {
     }
     
     init() {
+        // TODO: テスト用 いらなくなったら削除
+        let afterFourDays = Calendar.current.date(byAdding: .day, value: 4, to: Date()) ?? Date()
         let bestByDateItemList: [BestByDateItem] = [
-            // TODO: DatePickerで選択してない場合は現在時間で処理してしまう。テスト用なのでそのうち削除
-            BestByDateItem(name: "砂糖", bestByDate: Date()),
-            BestByDateItem(name: "塩", bestByDate: Date()),
-            BestByDateItem(name: "酢", bestByDate: Date()),
-            BestByDateItem(name: "醤油", bestByDate: Date()),
-            BestByDateItem(name: "味噌", bestByDate: Date()),
-            BestByDateItem(name: "マヨネーズ", bestByDate: Date()),
-            BestByDateItem(name: "ケチャップ", bestByDate: Date())
+            BestByDateItem(name: "砂糖", bestByDate: afterFourDays),
+            BestByDateItem(name: "塩", bestByDate: afterFourDays),
+            BestByDateItem(name: "酢", bestByDate: afterFourDays),
+            BestByDateItem(name: "醤油", bestByDate: afterFourDays),
+            BestByDateItem(name: "味噌", bestByDate: afterFourDays),
         ]
         self.bestByDateItemList = bestByDateItemList
     }
@@ -73,7 +72,6 @@ class BestByDateViewModel: ObservableObject {
               let nowDateTimeInterval = dateFormatter.date(from: dateFormatter.string(from: today))?.timeIntervalSince1970 else {
             return -1
         }
-        print("bestByDateTimeInterval - nowDateTimeInterval = \(String(describing: bestByDateTimeInterval - nowDateTimeInterval))")
         // 何日前に通知するか
         // TODO: ここでは現状仕様として3日前
         let notifyDayToSec = (60 * 60 * 24) * 3
@@ -82,9 +80,9 @@ class BestByDateViewModel: ObservableObject {
         let notifyTimeToSec = 60 * 60 * 10
         // 現在時間→秒
         let currentTimeToSec = (Calendar.current.component(.hour, from: today) * 60 * 60) + (Calendar.current.component(.minute, from: today) * 60)
-        print("\(String(describing: Int(bestByDateTimeInterval - nowDateTimeInterval) - notifyDayToSec + notifyTimeToSec - currentTimeToSec))")
-
-        // (期限日 - 今日 - 通知したい日) + 通知したい時間 - 現在時間
-        return (Int(bestByDateTimeInterval - nowDateTimeInterval) - notifyDayToSec) + notifyTimeToSec - currentTimeToSec
+        // 通知したい日までの秒数：(期限日 - 今日 - 通知したい日) + 通知したい時間 - 現在時間
+        let notifyTimeInterval = (Int(bestByDateTimeInterval - nowDateTimeInterval) - notifyDayToSec) + notifyTimeToSec - currentTimeToSec
+        print("\(notifyTimeInterval)")
+        return notifyTimeInterval
     }
 }
