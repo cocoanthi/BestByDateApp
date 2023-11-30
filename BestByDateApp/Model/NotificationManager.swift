@@ -18,7 +18,11 @@ final class NotificationManager {
             let content = UNMutableNotificationContent()
             content.title = info.title
             content.body = info.body
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(info.timeInterval), repeats: info.isRepeat)
+            let trigger = UNTimeIntervalNotificationTrigger(
+                // 引数の値が不正の場合はクラッシュするため10秒後通知とする
+                timeInterval: TimeInterval(info.timeInterval > 0 ? info.timeInterval : 10),
+                repeats: info.isRepeat
+            )
             let request = UNNotificationRequest(identifier: info.identifier, content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         }
