@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		265BDF802AF298F4007A6B9B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 265BDF7F2AF298F4007A6B9B /* Realm */; };
 		265BDF822AF298F4007A6B9B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 265BDF812AF298F4007A6B9B /* RealmSwift */; };
+		26B403262B865C3E00D98F08 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B403252B865C3E00D98F08 /* HomeView.swift */; };
 		26D2CD6E2A4F243600187BA7 /* BestByDateAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2CD6D2A4F243600187BA7 /* BestByDateAppApp.swift */; };
 		26D2CD702A4F243600187BA7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2CD6F2A4F243600187BA7 /* ContentView.swift */; };
 		26D2CD722A4F243B00187BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26D2CD712A4F243B00187BA7 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26B403252B865C3E00D98F08 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		26D2CD6A2A4F243600187BA7 /* BestByDateApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestByDateApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D2CD6D2A4F243600187BA7 /* BestByDateAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateAppApp.swift; sourceTree = "<group>"; };
 		26D2CD6F2A4F243600187BA7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				26D2CD852A4F276B00187BA7 /* BestByDateListView.swift */,
+				26B403252B865C3E00D98F08 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				26EF99472A50703E0096C3D5 /* AppDelegate.swift in Sources */,
 				26D2CD842A4F254B00187BA7 /* BestByDateItem.swift in Sources */,
 				26D2CD772A4F243B00187BA7 /* Persistence.swift in Sources */,
+				26B403262B865C3E00D98F08 /* HomeView.swift in Sources */,
 				26EF994A2A5078630096C3D5 /* NotificationManager.swift in Sources */,
 				26D2CD702A4F243600187BA7 /* ContentView.swift in Sources */,
 				26D2CD7A2A4F243B00187BA7 /* BestByDateApp.xcdatamodeld in Sources */,
@@ -258,7 +262,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -312,7 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
