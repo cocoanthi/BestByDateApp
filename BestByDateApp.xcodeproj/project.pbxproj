@@ -14,6 +14,8 @@
 		26B4032C2B88904300D98F08 /* GroupDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B4032B2B88904300D98F08 /* GroupDeleteView.swift */; };
 		26B4032E2B8890A200D98F08 /* GroupEnteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B4032D2B8890A200D98F08 /* GroupEnteryView.swift */; };
 		26B403302B8890C500D98F08 /* GroupHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B4032F2B8890C500D98F08 /* GroupHistoryView.swift */; };
+		26B403362B889EF000D98F08 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B403352B889EF000D98F08 /* CustomButton.swift */; };
+		26B403392B88E06000D98F08 /* CustomListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B403382B88E06000D98F08 /* CustomListRow.swift */; };
 		26D2CD6E2A4F243600187BA7 /* BestByDateAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2CD6D2A4F243600187BA7 /* BestByDateAppApp.swift */; };
 		26D2CD702A4F243600187BA7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2CD6F2A4F243600187BA7 /* ContentView.swift */; };
 		26D2CD722A4F243B00187BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26D2CD712A4F243B00187BA7 /* Assets.xcassets */; };
@@ -33,6 +35,8 @@
 		26B4032B2B88904300D98F08 /* GroupDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDeleteView.swift; sourceTree = "<group>"; };
 		26B4032D2B8890A200D98F08 /* GroupEnteryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupEnteryView.swift; sourceTree = "<group>"; };
 		26B4032F2B8890C500D98F08 /* GroupHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupHistoryView.swift; sourceTree = "<group>"; };
+		26B403352B889EF000D98F08 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		26B403382B88E06000D98F08 /* CustomListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListRow.swift; sourceTree = "<group>"; };
 		26D2CD6A2A4F243600187BA7 /* BestByDateApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestByDateApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D2CD6D2A4F243600187BA7 /* BestByDateAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateAppApp.swift; sourceTree = "<group>"; };
 		26D2CD6F2A4F243600187BA7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,6 +64,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26B403312B889CB100D98F08 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		26B4033A2B88E13800D98F08 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				26B403382B88E06000D98F08 /* CustomListRow.swift */,
+				26B403352B889EF000D98F08 /* CustomButton.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		26D2CD612A4F243600187BA7 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +99,7 @@
 		26D2CD6C2A4F243600187BA7 /* BestByDateApp */ = {
 			isa = PBXGroup;
 			children = (
+				26B403312B889CB100D98F08 /* Extension */,
 				26D2CD6D2A4F243600187BA7 /* BestByDateAppApp.swift */,
 				26D2CD6F2A4F243600187BA7 /* ContentView.swift */,
 				26D2CD822A4F251400187BA7 /* Model */,
@@ -104,6 +125,7 @@
 		26D2CD802A4F24FB00187BA7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				26B4033A2B88E13800D98F08 /* Common */,
 				26D2CD852A4F276B00187BA7 /* BestByDateListView.swift */,
 				26B403252B865C3E00D98F08 /* HomeView.swift */,
 				26B403292B888F9A00D98F08 /* GroupCreationView.swift */,
@@ -222,6 +244,8 @@
 				26D2CD882A4F285300187BA7 /* BestByDateViewModel.swift in Sources */,
 				26D2CD862A4F276B00187BA7 /* BestByDateListView.swift in Sources */,
 				26B4032C2B88904300D98F08 /* GroupDeleteView.swift in Sources */,
+				26B403392B88E06000D98F08 /* CustomListRow.swift in Sources */,
+				26B403362B889EF000D98F08 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
