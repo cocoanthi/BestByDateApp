@@ -14,28 +14,28 @@ struct HomeView: View {
                 Spacer()
 
                 // TODO: グループ作成画面に遷移
-                NavigationLink(destination: {}) {
+                NavigationLink(destination: GroupCreationView() ) {
                     Text("グループ作成")
                 }
                 
                 Spacer()
                 
                 // TODO: グループ削除画面に遷移
-                NavigationLink(destination: {}) {
+                NavigationLink(destination: GroupDeleteView()) {
                     Text("グループ削除")
                 }
                 
                 Spacer()
 
                 // TODO: グループ入室画面に遷移
-                NavigationLink(destination: {}) {
+                NavigationLink(destination: GroupEnteryView()) {
                     Text("グループ入室")
                 }
                 
                 Spacer()
                 
                 // TODO: 履歴画面に遷移
-                NavigationLink(destination: {}) {
+                NavigationLink(destination: GroupHistoryView()) {
                     Text("履歴")
                 }
                 
