@@ -11,6 +11,7 @@
 		260FC35A2B88F6AC004148BE /* GroupDeleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FC3592B88F6AC004148BE /* GroupDeleteViewModel.swift */; };
 		260FC35C2B88F6B7004148BE /* GroupEnteryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FC35B2B88F6B7004148BE /* GroupEnteryViewModel.swift */; };
 		260FC35E2B88F6CB004148BE /* GroupHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FC35D2B88F6CB004148BE /* GroupHistoryViewModel.swift */; };
+		260FC3652B88FB4F004148BE /* BestByDateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FC3642B88FB4F004148BE /* BestByDateRepository.swift */; };
 		265BDF802AF298F4007A6B9B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 265BDF7F2AF298F4007A6B9B /* Realm */; };
 		265BDF822AF298F4007A6B9B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 265BDF812AF298F4007A6B9B /* RealmSwift */; };
 		26B403262B865C3E00D98F08 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B403252B865C3E00D98F08 /* HomeView.swift */; };
@@ -38,6 +39,7 @@
 		260FC3592B88F6AC004148BE /* GroupDeleteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDeleteViewModel.swift; sourceTree = "<group>"; };
 		260FC35B2B88F6B7004148BE /* GroupEnteryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupEnteryViewModel.swift; sourceTree = "<group>"; };
 		260FC35D2B88F6CB004148BE /* GroupHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupHistoryViewModel.swift; sourceTree = "<group>"; };
+		260FC3642B88FB4F004148BE /* BestByDateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateRepository.swift; sourceTree = "<group>"; };
 		26B403252B865C3E00D98F08 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		26B403292B888F9A00D98F08 /* GroupCreationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCreationView.swift; sourceTree = "<group>"; };
 		26B4032B2B88904300D98F08 /* GroupDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDeleteView.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		260FC3612B88F908004148BE /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				260FC3642B88FB4F004148BE /* BestByDateRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				260FC35A2B88F6AC004148BE /* GroupDeleteViewModel.swift in Sources */,
 				26D2CD862A4F276B00187BA7 /* BestByDateListView.swift in Sources */,
 				26B4032C2B88904300D98F08 /* GroupDeleteView.swift in Sources */,
+				260FC3652B88FB4F004148BE /* BestByDateRepository.swift in Sources */,
 				26B403392B88E06000D98F08 /* CustomListRow.swift in Sources */,
 				26B403362B889EF000D98F08 /* CustomButton.swift in Sources */,
 			);
