@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct GroupCreationView: View {
-    @State var password = ""
-    // TODO: ViewModelで持つようにする
-    @State var isLoaded = false
+    @StateObject var viewModel: GroupCreationViewModel
+    @State private var password = ""
     
     var body: some View {
         Group {
@@ -26,13 +25,12 @@ struct GroupCreationView: View {
             Spacer()
             
             CustomButton(action: {
-                // TODO: 作成処理、isLoadedをtrueにする処理を入れる
-                isLoaded = true
+                viewModel.registerGroup()
             }, text: "作成", width: UIScreen.main.bounds.width / 2)
                 .padding()
         }
         .navigationTitle("グループ作成")
-        .navigationDestination(isPresented: $isLoaded) {
+        .navigationDestination(isPresented: $viewModel.isLoaded) {
             BestByDateListView()
         }
     }
@@ -40,6 +38,6 @@ struct GroupCreationView: View {
 
 struct GroupCreationView_Previews: PreviewProvider {
     static var previews: some View {
-        GroupCreationView()
+        GroupCreationView(viewModel: GroupCreationViewModel())
     }
 }

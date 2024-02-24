@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class GroupCreationViewModel: ObservableObject {
+    @Published var isLoaded: Bool = false
+
+    func registerGroup() {
+        isLoaded = true
+    }
+}

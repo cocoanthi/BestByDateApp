@@ -8,6 +8,9 @@
 import Foundation
 
 struct BestByDateRepository {
+    static let shared = BestByDateRepository()
+    
+    private init() {}
     
     func register() {
         // TODO: 登録処理

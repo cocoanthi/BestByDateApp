@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+class GroupHistoryViewModel: ObservableObject {
+    
+    func fetchGroupHistory() {
+        
+    }
+}

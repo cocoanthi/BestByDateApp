@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class GroupEnteryViewModel: ObservableObject {
+    @Published var isLoaded = false
+    
+    func authorizeEntryGroup(id: String, password: String) {
+        isLoaded = true
+    }
+}

@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct GroupEnteryView: View {
+    @StateObject var viewModel: GroupEnteryViewModel
     @State var id = ""
     @State var password = ""
-    // TODO: ViewModelで持つようにする
-    @State var isLoaded = false
     
     var body: some View {
         Group {
@@ -33,12 +32,12 @@ struct GroupEnteryView: View {
             
             CustomButton(action: {
                 // TODO: 認証処理、isLoadedをtrueにする処理を入れる
-                isLoaded = true
+                viewModel.authorizeEntryGroup(id: id, password: password)
             }, text: "入室", width: UIScreen.main.bounds.width / 2)
                 .padding()
         }
         .navigationTitle("グループ入室")
-        .navigationDestination(isPresented: $isLoaded) {
+        .navigationDestination(isPresented: $viewModel.isLoaded) {
             BestByDateListView()
         }
     }
@@ -46,6 +45,6 @@ struct GroupEnteryView: View {
 
 struct GroupEnteryView_Previews: PreviewProvider {
     static var previews: some View {
-        GroupEnteryView()
+        GroupEnteryView(viewModel: GroupEnteryViewModel())
     }
 }

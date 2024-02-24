@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+class GroupDeleteViewModel: ObservableObject {
+    
+    func deleteGroup(id: String, password: String) {
+        
+    }
+}

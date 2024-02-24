@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GroupDeleteView: View {
+    @StateObject var viewModel: GroupDeleteViewModel
     @State var id = ""
     @State var password = ""
     
@@ -30,7 +31,8 @@ struct GroupDeleteView: View {
             Spacer()
             
             CustomButton(action: {
-                // 入力された情報で検索、あればダイアログを出して削除
+                // TODO: 入力された情報で検索、あればダイアログを出して削除
+                viewModel.deleteGroup(id: id, password: password)
             }, text: "削除", width: UIScreen.main.bounds.width / 2)
                 .padding()
         }
@@ -40,6 +42,6 @@ struct GroupDeleteView: View {
 
 struct GroupDeleteView_Previews: PreviewProvider {
     static var previews: some View {
-        GroupDeleteView()
+        GroupDeleteView(viewModel: GroupDeleteViewModel())
     }
 }

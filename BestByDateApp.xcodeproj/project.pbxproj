@@ -156,10 +156,10 @@
 		26D2CD6C2A4F243600187BA7 /* BestByDateApp */ = {
 			isa = PBXGroup;
 			children = (
+				26D2CD802A4F24FB00187BA7 /* View */,
 				260FC3622B88F937004148BE /* Domain */,
 				260FC35F2B88F8F3004148BE /* Data */,
 				26B403312B889CB100D98F08 /* Extension */,
-				26D2CD802A4F24FB00187BA7 /* View */,
 				26D2CD712A4F243B00187BA7 /* Assets.xcassets */,
 				26D2CD762A4F243B00187BA7 /* Persistence.swift */,
 				26D2CD782A4F243B00187BA7 /* BestByDateApp.xcdatamodeld */,
