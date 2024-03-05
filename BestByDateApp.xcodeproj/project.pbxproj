@@ -12,6 +12,12 @@
 		260FC35C2B88F6B7004148BE /* GroupEnteryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FC35B2B88F6B7004148BE /* GroupEnteryViewModel.swift */; };
 		260FC35E2B88F6CB004148BE /* GroupHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FC35D2B88F6CB004148BE /* GroupHistoryViewModel.swift */; };
 		260FC3652B88FB4F004148BE /* BestByDateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FC3642B88FB4F004148BE /* BestByDateRepository.swift */; };
+		2629420B2B9768C100DBA853 /* ApiRequestTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2629420A2B9768C100DBA853 /* ApiRequestTemplate.swift */; };
+		2629420D2B97692D00DBA853 /* BaseUrlType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2629420C2B97692D00DBA853 /* BaseUrlType.swift */; };
+		2629420F2B97695400DBA853 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2629420E2B97695400DBA853 /* HttpMethod.swift */; };
+		262942112B97697B00DBA853 /* ApiRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262942102B97697B00DBA853 /* ApiRequestError.swift */; };
+		262942132B976C2A00DBA853 /* ApiRequestPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262942122B976C2A00DBA853 /* ApiRequestPublisher.swift */; };
+		262942162B976E7B00DBA853 /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262942152B976E7B00DBA853 /* EmptyResponse.swift */; };
 		265BDF802AF298F4007A6B9B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 265BDF7F2AF298F4007A6B9B /* Realm */; };
 		265BDF822AF298F4007A6B9B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 265BDF812AF298F4007A6B9B /* RealmSwift */; };
 		26B403262B865C3E00D98F08 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B403252B865C3E00D98F08 /* HomeView.swift */; };
@@ -40,6 +46,12 @@
 		260FC35B2B88F6B7004148BE /* GroupEnteryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupEnteryViewModel.swift; sourceTree = "<group>"; };
 		260FC35D2B88F6CB004148BE /* GroupHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupHistoryViewModel.swift; sourceTree = "<group>"; };
 		260FC3642B88FB4F004148BE /* BestByDateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateRepository.swift; sourceTree = "<group>"; };
+		2629420A2B9768C100DBA853 /* ApiRequestTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestTemplate.swift; sourceTree = "<group>"; };
+		2629420C2B97692D00DBA853 /* BaseUrlType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUrlType.swift; sourceTree = "<group>"; };
+		2629420E2B97695400DBA853 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		262942102B97697B00DBA853 /* ApiRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestError.swift; sourceTree = "<group>"; };
+		262942122B976C2A00DBA853 /* ApiRequestPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestPublisher.swift; sourceTree = "<group>"; };
+		262942152B976E7B00DBA853 /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
 		26B403252B865C3E00D98F08 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		26B403292B888F9A00D98F08 /* GroupCreationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCreationView.swift; sourceTree = "<group>"; };
 		26B4032B2B88904300D98F08 /* GroupDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDeleteView.swift; sourceTree = "<group>"; };
@@ -77,7 +89,7 @@
 		260FC35F2B88F8F3004148BE /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				260FC3612B88F908004148BE /* Repository */,
+				262942072B9766C600DBA853 /* Repository */,
 				260FC3602B88F901004148BE /* Entity */,
 			);
 			path = Data;
@@ -89,14 +101,6 @@
 				26D2CD832A4F254B00187BA7 /* BestByDateItem.swift */,
 			);
 			path = Entity;
-			sourceTree = "<group>";
-		};
-		260FC3612B88F908004148BE /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				260FC3642B88FB4F004148BE /* BestByDateRepository.swift */,
-			);
-			path = Repository;
 			sourceTree = "<group>";
 		};
 		260FC3622B88F937004148BE /* Domain */ = {
@@ -119,6 +123,36 @@
 				26B4032F2B8890C500D98F08 /* GroupHistoryView.swift */,
 			);
 			path = Contents;
+			sourceTree = "<group>";
+		};
+		262942072B9766C600DBA853 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				262942122B976C2A00DBA853 /* ApiRequestPublisher.swift */,
+				2629421A2B976F3A00DBA853 /* BestByDate */,
+				262942192B976F2600DBA853 /* ApiTemplate */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		262942192B976F2600DBA853 /* ApiTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				262942152B976E7B00DBA853 /* EmptyResponse.swift */,
+				262942102B97697B00DBA853 /* ApiRequestError.swift */,
+				2629420A2B9768C100DBA853 /* ApiRequestTemplate.swift */,
+				2629420E2B97695400DBA853 /* HttpMethod.swift */,
+				2629420C2B97692D00DBA853 /* BaseUrlType.swift */,
+			);
+			path = ApiTemplate;
+			sourceTree = "<group>";
+		};
+		2629421A2B976F3A00DBA853 /* BestByDate */ = {
+			isa = PBXGroup;
+			children = (
+				260FC3642B88FB4F004148BE /* BestByDateRepository.swift */,
+			);
+			path = BestByDate;
 			sourceTree = "<group>";
 		};
 		26B403312B889CB100D98F08 /* Extension */ = {
@@ -293,17 +327,23 @@
 				260FC35E2B88F6CB004148BE /* GroupHistoryViewModel.swift in Sources */,
 				26B403262B865C3E00D98F08 /* HomeView.swift in Sources */,
 				26EF994A2A5078630096C3D5 /* NotificationManager.swift in Sources */,
+				262942162B976E7B00DBA853 /* EmptyResponse.swift in Sources */,
+				2629420B2B9768C100DBA853 /* ApiRequestTemplate.swift in Sources */,
 				26B4032A2B888F9A00D98F08 /* GroupCreationView.swift in Sources */,
 				260FC35C2B88F6B7004148BE /* GroupEnteryViewModel.swift in Sources */,
 				26D2CD702A4F243600187BA7 /* ContentView.swift in Sources */,
+				262942112B97697B00DBA853 /* ApiRequestError.swift in Sources */,
 				26D2CD7A2A4F243B00187BA7 /* BestByDateApp.xcdatamodeld in Sources */,
 				260FC3582B88F69A004148BE /* GroupCreationViewModel.swift in Sources */,
 				26D2CD6E2A4F243600187BA7 /* BestByDateAppApp.swift in Sources */,
 				26D2CD882A4F285300187BA7 /* BestByDateViewModel.swift in Sources */,
 				260FC35A2B88F6AC004148BE /* GroupDeleteViewModel.swift in Sources */,
+				262942132B976C2A00DBA853 /* ApiRequestPublisher.swift in Sources */,
 				26D2CD862A4F276B00187BA7 /* BestByDateListView.swift in Sources */,
 				26B4032C2B88904300D98F08 /* GroupDeleteView.swift in Sources */,
+				2629420D2B97692D00DBA853 /* BaseUrlType.swift in Sources */,
 				260FC3652B88FB4F004148BE /* BestByDateRepository.swift in Sources */,
+				2629420F2B97695400DBA853 /* HttpMethod.swift in Sources */,
 				26B403392B88E06000D98F08 /* CustomListRow.swift in Sources */,
 				26B403362B889EF000D98F08 /* CustomButton.swift in Sources */,
 			);
