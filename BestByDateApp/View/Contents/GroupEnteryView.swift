@@ -1,5 +1,5 @@
 //
-//  GroupDeleteView.swift
+//  GroupEnteryView.swift
 //  BestByDateApp
 //
 //  Created by 矢口諒 on 2024/02/23.
@@ -7,14 +7,15 @@
 
 import SwiftUI
 
-struct GroupDeleteView: View {
+struct GroupEnteryView: View {
+    @StateObject var viewModel: GroupEnteryViewModel
     @State var id = ""
     @State var password = ""
     
     var body: some View {
         Group {
             Spacer()
-            Text("削除するグループの情報を以下に設定してください")
+            Text("入室するグループの情報を以下に設定してください")
                 .padding()
 
             VStack(alignment: .leading, spacing: 5) {
@@ -30,16 +31,20 @@ struct GroupDeleteView: View {
             Spacer()
             
             CustomButton(action: {
-                // 入力された情報で検索、あればダイアログを出して削除
-            }, text: "削除", width: UIScreen.main.bounds.width / 2)
+                // TODO: 認証処理、isLoadedをtrueにする処理を入れる
+                viewModel.authorizeEntryGroup(id: id, password: password)
+            }, text: "入室", width: UIScreen.main.bounds.width / 2)
                 .padding()
         }
-        .navigationTitle("グループ削除")
+        .navigationTitle("グループ入室")
+        .navigationDestination(isPresented: $viewModel.isLoaded) {
+            BestByDateListView()
+        }
     }
 }
 
-struct GroupDeleteView_Previews: PreviewProvider {
+struct GroupEnteryView_Previews: PreviewProvider {
     static var previews: some View {
-        GroupDeleteView()
+        GroupEnteryView(viewModel: GroupEnteryViewModel())
     }
 }

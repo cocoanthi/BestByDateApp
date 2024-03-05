@@ -13,25 +13,25 @@ struct HomeView: View {
             NavigationStack {
                 Spacer()
 
-                NavigationLink(destination: GroupCreationView() ) {
+                NavigationLink(destination: GroupCreationView(viewModel: GroupCreationViewModel()) ) {
                     Text("グループ作成")
                 }
                 
                 Spacer()
                 
-                NavigationLink(destination: GroupDeleteView()) {
+                NavigationLink(destination: GroupDeleteView(viewModel: GroupDeleteViewModel())) {
                     Text("グループ削除")
                 }
                 
                 Spacer()
 
-                NavigationLink(destination: GroupEnteryView()) {
+                NavigationLink(destination: GroupEnteryView(viewModel: GroupEnteryViewModel())) {
                     Text("グループ入室")
                 }
                 
                 Spacer()
                 
-                NavigationLink(destination: GroupHistoryView()) {
+                NavigationLink(destination: GroupHistoryView(viewModel: GroupHistoryViewModel())) {
                     Text("入室一覧")
                 }
                 

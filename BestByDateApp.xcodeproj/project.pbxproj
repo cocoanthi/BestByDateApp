@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		260FC3582B88F69A004148BE /* GroupCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FC3572B88F69A004148BE /* GroupCreationViewModel.swift */; };
+		260FC35A2B88F6AC004148BE /* GroupDeleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FC3592B88F6AC004148BE /* GroupDeleteViewModel.swift */; };
+		260FC35C2B88F6B7004148BE /* GroupEnteryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FC35B2B88F6B7004148BE /* GroupEnteryViewModel.swift */; };
+		260FC35E2B88F6CB004148BE /* GroupHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FC35D2B88F6CB004148BE /* GroupHistoryViewModel.swift */; };
+		260FC3652B88FB4F004148BE /* BestByDateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FC3642B88FB4F004148BE /* BestByDateRepository.swift */; };
 		265BDF802AF298F4007A6B9B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 265BDF7F2AF298F4007A6B9B /* Realm */; };
 		265BDF822AF298F4007A6B9B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 265BDF812AF298F4007A6B9B /* RealmSwift */; };
 		26B403262B865C3E00D98F08 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B403252B865C3E00D98F08 /* HomeView.swift */; };
@@ -30,6 +35,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		260FC3572B88F69A004148BE /* GroupCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCreationViewModel.swift; sourceTree = "<group>"; };
+		260FC3592B88F6AC004148BE /* GroupDeleteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDeleteViewModel.swift; sourceTree = "<group>"; };
+		260FC35B2B88F6B7004148BE /* GroupEnteryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupEnteryViewModel.swift; sourceTree = "<group>"; };
+		260FC35D2B88F6CB004148BE /* GroupHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupHistoryViewModel.swift; sourceTree = "<group>"; };
+		260FC3642B88FB4F004148BE /* BestByDateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateRepository.swift; sourceTree = "<group>"; };
 		26B403252B865C3E00D98F08 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		26B403292B888F9A00D98F08 /* GroupCreationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCreationView.swift; sourceTree = "<group>"; };
 		26B4032B2B88904300D98F08 /* GroupDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDeleteView.swift; sourceTree = "<group>"; };
@@ -64,6 +74,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		260FC35F2B88F8F3004148BE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				260FC3612B88F908004148BE /* Repository */,
+				260FC3602B88F901004148BE /* Entity */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		260FC3602B88F901004148BE /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				26D2CD832A4F254B00187BA7 /* BestByDateItem.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		260FC3612B88F908004148BE /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				260FC3642B88FB4F004148BE /* BestByDateRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		260FC3622B88F937004148BE /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				26D2CD822A4F251400187BA7 /* Model */,
+				26D2CD812A4F250700187BA7 /* ViewModel */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		260FC3632B88FA3B004148BE /* Contents */ = {
+			isa = PBXGroup;
+			children = (
+				26D2CD852A4F276B00187BA7 /* BestByDateListView.swift */,
+				26B403252B865C3E00D98F08 /* HomeView.swift */,
+				26B403292B888F9A00D98F08 /* GroupCreationView.swift */,
+				26B4032B2B88904300D98F08 /* GroupDeleteView.swift */,
+				26B4032D2B8890A200D98F08 /* GroupEnteryView.swift */,
+				26B4032F2B8890C500D98F08 /* GroupHistoryView.swift */,
+			);
+			path = Contents;
+			sourceTree = "<group>";
+		};
 		26B403312B889CB100D98F08 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,12 +156,10 @@
 		26D2CD6C2A4F243600187BA7 /* BestByDateApp */ = {
 			isa = PBXGroup;
 			children = (
-				26B403312B889CB100D98F08 /* Extension */,
-				26D2CD6D2A4F243600187BA7 /* BestByDateAppApp.swift */,
-				26D2CD6F2A4F243600187BA7 /* ContentView.swift */,
-				26D2CD822A4F251400187BA7 /* Model */,
-				26D2CD812A4F250700187BA7 /* ViewModel */,
 				26D2CD802A4F24FB00187BA7 /* View */,
+				260FC3622B88F937004148BE /* Domain */,
+				260FC35F2B88F8F3004148BE /* Data */,
+				26B403312B889CB100D98F08 /* Extension */,
 				26D2CD712A4F243B00187BA7 /* Assets.xcassets */,
 				26D2CD762A4F243B00187BA7 /* Persistence.swift */,
 				26D2CD782A4F243B00187BA7 /* BestByDateApp.xcdatamodeld */,
@@ -126,12 +181,9 @@
 			isa = PBXGroup;
 			children = (
 				26B4033A2B88E13800D98F08 /* Common */,
-				26D2CD852A4F276B00187BA7 /* BestByDateListView.swift */,
-				26B403252B865C3E00D98F08 /* HomeView.swift */,
-				26B403292B888F9A00D98F08 /* GroupCreationView.swift */,
-				26B4032B2B88904300D98F08 /* GroupDeleteView.swift */,
-				26B4032D2B8890A200D98F08 /* GroupEnteryView.swift */,
-				26B4032F2B8890C500D98F08 /* GroupHistoryView.swift */,
+				260FC3632B88FA3B004148BE /* Contents */,
+				26D2CD6D2A4F243600187BA7 /* BestByDateAppApp.swift */,
+				26D2CD6F2A4F243600187BA7 /* ContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -140,6 +192,10 @@
 			isa = PBXGroup;
 			children = (
 				26D2CD872A4F285300187BA7 /* BestByDateViewModel.swift */,
+				260FC3572B88F69A004148BE /* GroupCreationViewModel.swift */,
+				260FC3592B88F6AC004148BE /* GroupDeleteViewModel.swift */,
+				260FC35B2B88F6B7004148BE /* GroupEnteryViewModel.swift */,
+				260FC35D2B88F6CB004148BE /* GroupHistoryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -147,7 +203,6 @@
 		26D2CD822A4F251400187BA7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				26D2CD832A4F254B00187BA7 /* BestByDateItem.swift */,
 				26EF99492A5078630096C3D5 /* NotificationManager.swift */,
 			);
 			path = Model;
@@ -235,15 +290,20 @@
 				26EF99472A50703E0096C3D5 /* AppDelegate.swift in Sources */,
 				26D2CD842A4F254B00187BA7 /* BestByDateItem.swift in Sources */,
 				26D2CD772A4F243B00187BA7 /* Persistence.swift in Sources */,
+				260FC35E2B88F6CB004148BE /* GroupHistoryViewModel.swift in Sources */,
 				26B403262B865C3E00D98F08 /* HomeView.swift in Sources */,
 				26EF994A2A5078630096C3D5 /* NotificationManager.swift in Sources */,
 				26B4032A2B888F9A00D98F08 /* GroupCreationView.swift in Sources */,
+				260FC35C2B88F6B7004148BE /* GroupEnteryViewModel.swift in Sources */,
 				26D2CD702A4F243600187BA7 /* ContentView.swift in Sources */,
 				26D2CD7A2A4F243B00187BA7 /* BestByDateApp.xcdatamodeld in Sources */,
+				260FC3582B88F69A004148BE /* GroupCreationViewModel.swift in Sources */,
 				26D2CD6E2A4F243600187BA7 /* BestByDateAppApp.swift in Sources */,
 				26D2CD882A4F285300187BA7 /* BestByDateViewModel.swift in Sources */,
+				260FC35A2B88F6AC004148BE /* GroupDeleteViewModel.swift in Sources */,
 				26D2CD862A4F276B00187BA7 /* BestByDateListView.swift in Sources */,
 				26B4032C2B88904300D98F08 /* GroupDeleteView.swift in Sources */,
+				260FC3652B88FB4F004148BE /* BestByDateRepository.swift in Sources */,
 				26B403392B88E06000D98F08 /* CustomListRow.swift in Sources */,
 				26B403362B889EF000D98F08 /* CustomButton.swift in Sources */,
 			);

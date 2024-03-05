@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct GroupHistoryView: View {
+    @StateObject var viewModel: GroupHistoryViewModel
+    
     var body: some View {
         NavigationStack {
             List {
@@ -30,11 +32,14 @@ struct GroupHistoryView: View {
             }
         }
         .navigationTitle("入室一覧")
+        .onAppear {
+            viewModel.fetchGroupHistory()
+        }
     }
 }
 
 struct GroupHistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        GroupHistoryView()
+        GroupHistoryView(viewModel: GroupHistoryViewModel())
     }
 }
