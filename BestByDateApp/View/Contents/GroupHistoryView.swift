@@ -14,21 +14,21 @@ struct GroupHistoryView: View {
         NavigationStack {
             List {
                 // TODO: これまでに入室したグループをUserDefaultで保持しリスト表示する
-                NavigationLink(destination: {
-                    BestByDateListView()
-                } ) {
-                    CustomListRow(title: "グループA", subTitle: "groupID: 1234")
-                }
-                NavigationLink(destination: {
-                    BestByDateListView()
-                } ) {
-                    CustomListRow(title: "グループB", subTitle: "groupID: 5678")
-                }
-                NavigationLink(destination: {
-                    BestByDateListView()
-                } ) {
-                    CustomListRow(title: "グループC", subTitle: "groupID: 91011")
-                }
+//                NavigationLink(destination: {
+//                    BestByDateListView()
+//                } ) {
+//                    CustomListRow(title: "グループA", subTitle: "groupID: 1234")
+//                }
+//                NavigationLink(destination: {
+//                    BestByDateListView()
+//                } ) {
+//                    CustomListRow(title: "グループB", subTitle: "groupID: 5678")
+//                }
+//                NavigationLink(destination: {
+//                    BestByDateListView()
+//                } ) {
+//                    CustomListRow(title: "グループC", subTitle: "groupID: 91011")
+//                }
             }
         }
         .navigationTitle("入室一覧")

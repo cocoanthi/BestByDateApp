@@ -6,7 +6,7 @@ struct BestByDateListView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     
-    @StateObject var bestByDateViewModel: BestByDateViewModel = BestByDateViewModel()
+    @StateObject var bestByDateViewModel: BestByDateViewModel
     // 3日前に通知するため、現在日から４日後までは選択できないようにする
     let minDate = Calendar.current.date(byAdding: .day, value: 4, to: Date())!
 
@@ -29,15 +29,15 @@ struct BestByDateListView: View {
                         Spacer().frame(width: 10)
                         Button(
                             // 通知ボタン押下で通知可否状態を変更する
-                            action: { bestByDateViewModel.bestByDateItemList[index].isNotify.toggle() }
+                            action: { bestByDateViewModel.bestByDateItemList[index].notifyFlag.toggle() }
                         ){
                             // 通知可否の状態に応じて色を切り替える
                             Text("通知")
-                                .foregroundColor(bestByDateViewModel.bestByDateItemList[index].isNotify ? .blue : .gray)
+                                .foregroundColor(bestByDateViewModel.bestByDateItemList[index].notifyFlag ? .blue : .gray)
                                 .padding(2)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 5)
-                                        .stroke(bestByDateViewModel.bestByDateItemList[index].isNotify ? .blue : .gray, lineWidth: 2)
+                                        .stroke(bestByDateViewModel.bestByDateItemList[index].notifyFlag ? .blue : .gray, lineWidth: 2)
                                 )
                         }
                         // MARK: buttonStyle設定しないとタッチイベントがListに吸収される
@@ -67,6 +67,6 @@ struct BestByDateListView: View {
 
 struct BestByDateListView_Previews: PreviewProvider {
     static var previews: some View {
-        BestByDateListView()
+        BestByDateListView(bestByDateViewModel: .init(bestByDateItemList: []))
     }
 }

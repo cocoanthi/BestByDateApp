@@ -4,6 +4,8 @@ class BestByDateViewModel: ObservableObject {
     
     @Published var bestByDateItem: BestByDateItem? = nil
     @Published var bestByDateItemList: [BestByDateItem] = []
+    private let groupId: Int
+    private let serverId: Int
     
     var dateFormatter: DateFormatter {
         let format = DateFormatter()
@@ -13,24 +15,33 @@ class BestByDateViewModel: ObservableObject {
         return format
     }
     
-    init() {
-        // TODO: テスト用 いらなくなったら削除
-        let afterFourDays = Calendar.current.date(byAdding: .day, value: 4, to: Date()) ?? Date()
-        let bestByDateItemList: [BestByDateItem] = [
-            BestByDateItem(name: "砂糖", bestByDate: afterFourDays),
-            BestByDateItem(name: "塩", bestByDate: afterFourDays),
-            BestByDateItem(name: "酢", bestByDate: afterFourDays),
-            BestByDateItem(name: "醤油", bestByDate: afterFourDays),
-            BestByDateItem(name: "味噌", bestByDate: afterFourDays),
-        ]
+    init(bestByDateItemList: [BestByDateItem]) {
         self.bestByDateItemList = bestByDateItemList
+        self.groupId = bestByDateItemList.first?.groupId ?? -1
+        self.serverId = bestByDateItemList.first?.serverId ?? -1
+//        // TODO: テスト用 いらなくなったら削除
+//        let afterFourDays = Calendar.current.date(byAdding: .day, value: 4, to: Date()) ?? Date()
+//        let bestByDateItemList: [BestByDateItem] = [
+//            BestByDateItem(name: "砂糖", bestByDate: afterFourDays),
+//            BestByDateItem(name: "塩", bestByDate: afterFourDays),
+//            BestByDateItem(name: "酢", bestByDate: afterFourDays),
+//            BestByDateItem(name: "醤油", bestByDate: afterFourDays),
+//            BestByDateItem(name: "味噌", bestByDate: afterFourDays),
+//        ]
+//        self.bestByDateItemList = bestByDateItemList
     }
     
     func addItem() {
         guard let lastItem = bestByDateItemList.last,
               !lastItem.name.isEmpty else { return }
         withAnimation {
-            let newItem = BestByDateItem(name: "", bestByDate: Date())
+            let newItem = BestByDateItem(
+                groupId: self.groupId,
+                serverId: self.serverId,
+                name: "",
+                bestByDate: Date(),
+                notifyFlag: true
+            )
             bestByDateItemList.append(newItem)
         }
     }
@@ -57,7 +68,7 @@ class BestByDateViewModel: ObservableObject {
                     body: "",
                     timeInterval: createTimeInterval(notificationDate: item.bestByDate),
                     isRepeat: false,
-                    isNotify: item.isNotify
+                    isNotify: item.notifyFlag
                 )
             )
         }

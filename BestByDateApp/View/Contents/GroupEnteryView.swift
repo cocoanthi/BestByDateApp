@@ -38,7 +38,19 @@ struct GroupEnteryView: View {
         }
         .navigationTitle("グループ入室")
         .navigationDestination(isPresented: $viewModel.isLoaded) {
-            BestByDateListView()
+            if let bestByDateInfo = viewModel.bestByDateInfo {
+                BestByDateListView(bestByDateViewModel: .init(
+                    bestByDateItemList: bestByDateInfo.map({ (info: BestByDateInfo) -> BestByDateItem in
+                        return .init(
+                            groupId: info.groupId,
+                            serverId: info.id,
+                            name: info.name,
+                            bestByDate: info.bestByDate,
+                            notifyFlag: info.nofityFlag
+                        )
+                    })
+                ))
+            }
         }
     }
 }

@@ -58,6 +58,7 @@ class ApiRequestPublisher<T: ApiRequestTemplate> {
                 throw ApiRequestError.from(statusCode: httpResponse.statusCode)
             }
             .mapError { error in
+                print("[ERROR] \(error)")
                 let requestError: ApiRequestError
                 switch error {
                 case let apiRequestError as ApiRequestError:

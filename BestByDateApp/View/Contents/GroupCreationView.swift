@@ -31,7 +31,7 @@ struct GroupCreationView: View {
         }
         .navigationTitle("グループ作成")
         .navigationDestination(isPresented: $viewModel.isLoaded) {
-            BestByDateListView()
+//            BestByDateListView()
         }
     }
 }
