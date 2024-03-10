@@ -16,7 +16,7 @@ extension ApiRequestTemplate {
         [:]
     }
 
-    func publish() -> AnyPublisher<Response, ApiRequestError> {
+    func publish(completion: @escaping (Result<Self.Response, ApiRequestError>) -> Void) {
         ApiRequestPublisher<Self>(
             baseUrl: baseUrlType.urlString,
             baseUrlType: baseUrlType,
@@ -24,6 +24,6 @@ extension ApiRequestTemplate {
             method: method,
             bodyParams: bodyParams,
             headerParams: headerParams
-        ).publish()
+        ).publish(completion: completion)
     }
 }

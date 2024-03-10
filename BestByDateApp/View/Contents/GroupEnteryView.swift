@@ -46,7 +46,7 @@ struct GroupEnteryView: View {
                             serverId: info.id,
                             name: info.name,
                             bestByDate: info.bestByDate,
-                            notifyFlag: info.nofityFlag
+                            notifyFlag: info.nofityFlag ?? true
                         )
                     })
                 ))

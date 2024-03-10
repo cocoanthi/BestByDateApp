@@ -22,18 +22,14 @@ final class BestByDateRepository {
         from request: GetBestByDateRequest,
         completion: @escaping (Result<[BestByDateInfo], ApiRequestError>) -> Void
     ) {
-        request.publish()
-            .sink { result in
-                switch result {
-                case .finished:
-                    break
-                case let .failure(error):
-                    return completion(.failure(error))
-                }
-            } receiveValue: { response in
-                return completion(.success(response.bestByDateInfo ?? .init()))
+        request.publish(completion: { (result) in
+            switch result {
+            case let .success(data):
+                return completion(.success(data.bestByDateInfo))
+            case let .failure(error):
+                return completion(.failure(error))
             }
-            .store(in: &cancellables)
+        })
     }
     
     func update() {

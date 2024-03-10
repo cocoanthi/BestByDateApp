@@ -25,5 +25,5 @@ struct GetBestByDateRequest: ApiRequestTemplate {
 }
 
 struct GetBestByDateResponse: Decodable {
-    let bestByDateInfo: [BestByDateInfo]?
+    let bestByDateInfo: [BestByDateInfo]
 }

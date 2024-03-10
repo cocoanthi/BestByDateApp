@@ -6,5 +6,6 @@ struct BestByDateInfo: Decodable {
     let id: Int
     let name: String
     let bestByDate: Date
-    let nofityFlag: Bool
+    // TODO: うまくパースできない。おそらくdb側の問題なのであとで対応
+    let nofityFlag: Bool?
 }
