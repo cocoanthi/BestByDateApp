@@ -39,7 +39,7 @@ struct GroupEnteryView: View {
         .navigationTitle("グループ入室")
         .navigationDestination(isPresented: $viewModel.isLoaded) {
             if let info = viewModel.groupInfo {
-                BestByDateListView(bestByDateViewModel: .init(
+                BestByDateListView(vm: .init(
                     groupInfo: .init(
                         groupId: info.groupId,
                         groupName: info.groupName,

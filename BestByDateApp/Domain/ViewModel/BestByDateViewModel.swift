@@ -1,9 +1,8 @@
 import SwiftUI
 
 class BestByDateViewModel: ObservableObject {
-    
-//    @Published var bestByDateItem: BestByDateItem? = nil
-    @Published var bestByDateItemList: [BestByDateItem] = []
+    /// 画面表示用Item
+    @Published var viewBestByDateItemList: [BestByDateItem] = []
     let groupInfo: GroupInfo
     
     var dateFormatter: DateFormatter {
@@ -13,13 +12,15 @@ class BestByDateViewModel: ObservableObject {
         format.dateFormat = "yyyy-MM-dd"
         return format
     }
+    /// API要求用Item
+    private var oldBestByDateItemList: [BestByDateItem] = []
     
     init(groupInfo: GroupInfo) {
         self.groupInfo = groupInfo
         getBestByDateInfo(id: groupInfo.groupId) { result in
             switch result {
             case let .success(info):
-                self.bestByDateItemList.append(contentsOf: info.map({ bestByDateInfo in
+                self.viewBestByDateItemList.append(contentsOf: info.map({ bestByDateInfo in
                     return BestByDateItem(
                         groupId: bestByDateInfo.groupId,
                         name: bestByDateInfo.name,
@@ -27,6 +28,7 @@ class BestByDateViewModel: ObservableObject {
                         notifyFlag: bestByDateInfo.nofityFlag ?? true
                     )
                 }))
+                self.oldBestByDateItemList = self.viewBestByDateItemList
             case let .failure(error):
                 print(error)
             }
@@ -34,16 +36,17 @@ class BestByDateViewModel: ObservableObject {
     }
     
     func addItem() {
-        guard let lastItem = bestByDateItemList.last,
+        guard let lastItem = viewBestByDateItemList.last,
               !lastItem.name.isEmpty else { return }
         withAnimation {
             let newItem = BestByDateItem(
                 groupId: Int(groupInfo.groupId) ?? -1,
                 name: "",
                 bestByDate: Date(),
-                notifyFlag: true
+                notifyFlag: true,
+                state: .created
             )
-            bestByDateItemList.append(newItem)
+            viewBestByDateItemList.append(newItem)
         }
     }
     
@@ -55,13 +58,19 @@ class BestByDateViewModel: ObservableObject {
     
     func deleteItems(offsets: IndexSet) {
         withAnimation {
-            bestByDateItemList.remove(atOffsets: offsets)
+            viewBestByDateItemList.remove(atOffsets: offsets)
         }
+    }
+    
+    func onChangeItem(index: Int) {
+        // 作成されたItemが変更された場合はupdatedではなくcreatedの状態を継続する
+        guard viewBestByDateItemList[index].state != .created else { return }
+        viewBestByDateItemList[index].state = .updated
     }
     
     private func createNotificationInfo() -> [NotificationInfo] {
         var notificationInfo: [NotificationInfo] = []
-        bestByDateItemList.forEach { item in
+        viewBestByDateItemList.forEach { item in
             notificationInfo.append(
                 NotificationInfo(
                     identifier: item.id.uuidString,
