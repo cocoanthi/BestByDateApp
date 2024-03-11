@@ -9,18 +9,21 @@ import Foundation
 
 class GroupEnteryViewModel: ObservableObject {
     @Published var isLoaded = false
-    @Published var bestByDateInfo: [BestByDateInfo]?
+    @Published var groupInfo: GroupInfo?
 
     func authorizeEntryGroup(id: String, password: String) {
-        BestByDateRepository.shared.fetch(from: .init(groupId: "0")) { result in
-            return DispatchQueue.main.async {
-                switch result {
-                case let .success(info):
-                    self.bestByDateInfo = info
-                case let .failure(error):
-                    print(error)
+        Task {
+            GroupInfoRepository.shared.fetchOne(from: .init(groupId: id, password: password)) { result in
+                return DispatchQueue.main.async {
+                    switch result {
+                    case let .success(info):
+                        print("groupInfo.fetchOne succeed!")
+                        self.groupInfo = info
+                        self.isLoaded = true
+                    case let .failure(error):
+                        print(error)
+                    }
                 }
-                self.isLoaded = true
             }
         }
     }
