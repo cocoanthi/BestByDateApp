@@ -7,8 +7,8 @@
 
 import Combine
 
-final class BestByDateRepository {
-    static let shared = BestByDateRepository()
+final class GroupInfoRepository {
+    static let shared = GroupInfoRepository()
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -18,14 +18,14 @@ final class BestByDateRepository {
         // TODO: 登録処理
     }
 
-    func fetch(
-        from request: GetBestByDateRequest,
-        completion: @escaping (Result<[BestByDateInfo], ApiRequestError>) -> Void
+    func fetchOne(
+        from request: GetOneItemGroupInfoRequest,
+        completion: @escaping (Result<GroupInfo, ApiRequestError>) -> Void
     ) {
         request.publish(completion: { (result) in
             switch result {
             case let .success(data):
-                return completion(.success(data.bestByDateInfo))
+                return completion(.success(data.groupInfo))
             case let .failure(error):
                 return completion(.failure(error))
             }

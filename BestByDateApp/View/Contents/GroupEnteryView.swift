@@ -38,7 +38,15 @@ struct GroupEnteryView: View {
         }
         .navigationTitle("グループ入室")
         .navigationDestination(isPresented: $viewModel.isLoaded) {
-            BestByDateListView()
+            if let info = viewModel.groupInfo {
+                BestByDateListView(bestByDateViewModel: .init(
+                    groupInfo: .init(
+                        groupId: info.groupId,
+                        groupName: info.groupName,
+                        groupPassword: info.groupPassword
+                    )
+                ))
+            }
         }
     }
 }

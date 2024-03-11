@@ -13,7 +13,7 @@ class ApiRequestPublisher<T: ApiRequestTemplate> {
         let decoder = JSONDecoder()
         let formatter = DateFormatter()
         formatter.calendar = Calendar(identifier: .gregorian)
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        formatter.dateFormat = "yyyy-MM-dd"
         formatter.locale = Locale(identifier: "ja_JP")
         decoder.dateDecodingStrategy = .formatted(formatter)
         decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -36,42 +36,36 @@ class ApiRequestPublisher<T: ApiRequestTemplate> {
         self.headerParams = headerParams
     }
 
-    func publish() -> AnyPublisher<T.Response, ApiRequestError> {
+    func publish(completion: @escaping (Result<T.Response, ApiRequestError>) -> Void) {
         guard let url = URL(string: baseUrl + path),
               let urlRequest = makeUrlRequest(url: url) else {
-            return Fail(error: .unexpected).eraseToAnyPublisher()
+            return completion(.failure(.parameterError))
         }
 
-        return URLSession.shared.dataTaskPublisher(for: urlRequest)
-            .tryMap { output -> T.Response in
-                guard let httpResponse = output.response as? HTTPURLResponse else {
-                    throw ApiRequestError.unexpected
-                }
-                print("URL = \(url)")
-                print("statusCode = \(httpResponse.statusCode)")
-                if 200..<300 ~= httpResponse.statusCode {
-                    if let response = self.convertToResponse(data: output.data) {
-                        return response
-                    }
-                    throw ApiRequestError.decodingFailed
-                }
-                throw ApiRequestError.from(statusCode: httpResponse.statusCode)
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                return completion(.failure(.parameterError))
             }
-            .mapError { error in
-                let requestError: ApiRequestError
-                switch error {
-                case let apiRequestError as ApiRequestError:
-                    requestError = apiRequestError
-                case is Swift.DecodingError:
-                    requestError = .decodingFailed
-                case URLError.timedOut:
-                    requestError = .timeOut
-                default:
-                    requestError = .unexpected
-                }
-                return requestError
+            guard let data = data else {
+                print("Invalid data")
+                return completion(.failure(.notFound))
             }
-            .eraseToAnyPublisher()
+            let jsonString = String(data: data, encoding: .utf8)
+            print("jsonData = \(String(describing: jsonString))")
+            
+            do {
+                if let response = try self.convertToResponse(data: data) {
+                    return completion(.success(response))
+                } else {
+                    return completion(.failure(.decodingFailed))
+                }
+            } catch let error {
+                print("Error decoding JSON: \(error)")
+                print("Error decoding JSON: \(error.localizedDescription)")
+                return completion(.failure(.decodingFailed))
+            }
+        }.resume()
     }
 
     private func makeUrlRequest(url: URL) -> URLRequest? {
@@ -102,10 +96,10 @@ class ApiRequestPublisher<T: ApiRequestTemplate> {
         return urlRequest
     }
 
-    private func convertToResponse(data: Data) -> T.Response? {
+    private func convertToResponse(data: Data) throws -> T.Response? {
         if let response = EmptyResponse() as? T.Response ?? data as? T.Response {
             return response
         }
-        return try? decoder.decode(T.Response.self, from: data)
+        return try decoder.decode(T.Response.self, from: data)
     }
 }

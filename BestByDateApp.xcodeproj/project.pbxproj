@@ -18,8 +18,13 @@
 		262942112B97697B00DBA853 /* ApiRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262942102B97697B00DBA853 /* ApiRequestError.swift */; };
 		262942132B976C2A00DBA853 /* ApiRequestPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262942122B976C2A00DBA853 /* ApiRequestPublisher.swift */; };
 		262942162B976E7B00DBA853 /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262942152B976E7B00DBA853 /* EmptyResponse.swift */; };
+		2629421C2B9776A900DBA853 /* GetBestByDateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2629421B2B9776A900DBA853 /* GetBestByDateRequest.swift */; };
+		2629421E2B97797500DBA853 /* BestByDateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2629421D2B97797500DBA853 /* BestByDateInfo.swift */; };
 		265BDF802AF298F4007A6B9B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 265BDF7F2AF298F4007A6B9B /* Realm */; };
 		265BDF822AF298F4007A6B9B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 265BDF812AF298F4007A6B9B /* RealmSwift */; };
+		2694DB852B9DFA4500FC4ADE /* GetOneItemGroupInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694DB842B9DFA4500FC4ADE /* GetOneItemGroupInfoRequest.swift */; };
+		2694DB872B9DFB0500FC4ADE /* GroupInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694DB862B9DFB0500FC4ADE /* GroupInfoRepository.swift */; };
+		2694DB8A2B9DFBE300FC4ADE /* GroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694DB892B9DFBE300FC4ADE /* GroupInfo.swift */; };
 		26B403262B865C3E00D98F08 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B403252B865C3E00D98F08 /* HomeView.swift */; };
 		26B4032A2B888F9A00D98F08 /* GroupCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B403292B888F9A00D98F08 /* GroupCreationView.swift */; };
 		26B4032C2B88904300D98F08 /* GroupDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B4032B2B88904300D98F08 /* GroupDeleteView.swift */; };
@@ -52,6 +57,11 @@
 		262942102B97697B00DBA853 /* ApiRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestError.swift; sourceTree = "<group>"; };
 		262942122B976C2A00DBA853 /* ApiRequestPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestPublisher.swift; sourceTree = "<group>"; };
 		262942152B976E7B00DBA853 /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
+		2629421B2B9776A900DBA853 /* GetBestByDateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetBestByDateRequest.swift; path = BestByDateApp/Domain/GetBestByDateRequest.swift; sourceTree = SOURCE_ROOT; };
+		2629421D2B97797500DBA853 /* BestByDateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateInfo.swift; sourceTree = "<group>"; };
+		2694DB842B9DFA4500FC4ADE /* GetOneItemGroupInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOneItemGroupInfoRequest.swift; sourceTree = "<group>"; };
+		2694DB862B9DFB0500FC4ADE /* GroupInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfoRepository.swift; sourceTree = "<group>"; };
+		2694DB892B9DFBE300FC4ADE /* GroupInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfo.swift; sourceTree = "<group>"; };
 		26B403252B865C3E00D98F08 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		26B403292B888F9A00D98F08 /* GroupCreationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCreationView.swift; sourceTree = "<group>"; };
 		26B4032B2B88904300D98F08 /* GroupDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDeleteView.swift; sourceTree = "<group>"; };
@@ -129,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				262942122B976C2A00DBA853 /* ApiRequestPublisher.swift */,
+				2694DB882B9DFB1800FC4ADE /* GroupInfo */,
 				2629421A2B976F3A00DBA853 /* BestByDate */,
 				262942192B976F2600DBA853 /* ApiTemplate */,
 			);
@@ -151,8 +162,20 @@
 			isa = PBXGroup;
 			children = (
 				260FC3642B88FB4F004148BE /* BestByDateRepository.swift */,
+				2629421B2B9776A900DBA853 /* GetBestByDateRequest.swift */,
+				2629421D2B97797500DBA853 /* BestByDateInfo.swift */,
 			);
 			path = BestByDate;
+			sourceTree = "<group>";
+		};
+		2694DB882B9DFB1800FC4ADE /* GroupInfo */ = {
+			isa = PBXGroup;
+			children = (
+				2694DB842B9DFA4500FC4ADE /* GetOneItemGroupInfoRequest.swift */,
+				2694DB862B9DFB0500FC4ADE /* GroupInfoRepository.swift */,
+				2694DB892B9DFBE300FC4ADE /* GroupInfo.swift */,
+			);
+			path = GroupInfo;
 			sourceTree = "<group>";
 		};
 		26B403312B889CB100D98F08 /* Extension */ = {
@@ -320,7 +343,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				26B4032E2B8890A200D98F08 /* GroupEnteryView.swift in Sources */,
+				2629421C2B9776A900DBA853 /* GetBestByDateRequest.swift in Sources */,
 				26B403302B8890C500D98F08 /* GroupHistoryView.swift in Sources */,
+				2694DB8A2B9DFBE300FC4ADE /* GroupInfo.swift in Sources */,
 				26EF99472A50703E0096C3D5 /* AppDelegate.swift in Sources */,
 				26D2CD842A4F254B00187BA7 /* BestByDateItem.swift in Sources */,
 				26D2CD772A4F243B00187BA7 /* Persistence.swift in Sources */,
@@ -336,8 +361,10 @@
 				26D2CD7A2A4F243B00187BA7 /* BestByDateApp.xcdatamodeld in Sources */,
 				260FC3582B88F69A004148BE /* GroupCreationViewModel.swift in Sources */,
 				26D2CD6E2A4F243600187BA7 /* BestByDateAppApp.swift in Sources */,
+				2694DB852B9DFA4500FC4ADE /* GetOneItemGroupInfoRequest.swift in Sources */,
 				26D2CD882A4F285300187BA7 /* BestByDateViewModel.swift in Sources */,
 				260FC35A2B88F6AC004148BE /* GroupDeleteViewModel.swift in Sources */,
+				2629421E2B97797500DBA853 /* BestByDateInfo.swift in Sources */,
 				262942132B976C2A00DBA853 /* ApiRequestPublisher.swift in Sources */,
 				26D2CD862A4F276B00187BA7 /* BestByDateListView.swift in Sources */,
 				26B4032C2B88904300D98F08 /* GroupDeleteView.swift in Sources */,
@@ -346,6 +373,7 @@
 				2629420F2B97695400DBA853 /* HttpMethod.swift in Sources */,
 				26B403392B88E06000D98F08 /* CustomListRow.swift in Sources */,
 				26B403362B889EF000D98F08 /* CustomButton.swift in Sources */,
+				2694DB872B9DFB0500FC4ADE /* GroupInfoRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,8 +2,9 @@ import SwiftUI
 
 class BestByDateViewModel: ObservableObject {
     
-    @Published var bestByDateItem: BestByDateItem? = nil
+//    @Published var bestByDateItem: BestByDateItem? = nil
     @Published var bestByDateItemList: [BestByDateItem] = []
+    let groupInfo: GroupInfo
     
     var dateFormatter: DateFormatter {
         let format = DateFormatter()
@@ -13,24 +14,35 @@ class BestByDateViewModel: ObservableObject {
         return format
     }
     
-    init() {
-        // TODO: テスト用 いらなくなったら削除
-        let afterFourDays = Calendar.current.date(byAdding: .day, value: 4, to: Date()) ?? Date()
-        let bestByDateItemList: [BestByDateItem] = [
-            BestByDateItem(name: "砂糖", bestByDate: afterFourDays),
-            BestByDateItem(name: "塩", bestByDate: afterFourDays),
-            BestByDateItem(name: "酢", bestByDate: afterFourDays),
-            BestByDateItem(name: "醤油", bestByDate: afterFourDays),
-            BestByDateItem(name: "味噌", bestByDate: afterFourDays),
-        ]
-        self.bestByDateItemList = bestByDateItemList
+    init(groupInfo: GroupInfo) {
+        self.groupInfo = groupInfo
+        getBestByDateInfo(id: groupInfo.groupId) { result in
+            switch result {
+            case let .success(info):
+                self.bestByDateItemList.append(contentsOf: info.map({ bestByDateInfo in
+                    return BestByDateItem(
+                        groupId: bestByDateInfo.groupId,
+                        name: bestByDateInfo.name,
+                        bestByDate: bestByDateInfo.bestByDate,
+                        notifyFlag: bestByDateInfo.nofityFlag ?? true
+                    )
+                }))
+            case let .failure(error):
+                print(error)
+            }
+        }
     }
     
     func addItem() {
         guard let lastItem = bestByDateItemList.last,
               !lastItem.name.isEmpty else { return }
         withAnimation {
-            let newItem = BestByDateItem(name: "", bestByDate: Date())
+            let newItem = BestByDateItem(
+                groupId: Int(groupInfo.groupId) ?? -1,
+                name: "",
+                bestByDate: Date(),
+                notifyFlag: true
+            )
             bestByDateItemList.append(newItem)
         }
     }
@@ -57,7 +69,7 @@ class BestByDateViewModel: ObservableObject {
                     body: "",
                     timeInterval: createTimeInterval(notificationDate: item.bestByDate),
                     isRepeat: false,
-                    isNotify: item.isNotify
+                    isNotify: item.notifyFlag
                 )
             )
         }
@@ -84,5 +96,23 @@ class BestByDateViewModel: ObservableObject {
         let notifyTimeInterval = (Int(bestByDateTimeInterval - nowDateTimeInterval) - notifyDayToSec) + notifyTimeToSec - currentTimeToSec
         print("\(notifyTimeInterval)")
         return notifyTimeInterval
+    }
+    
+    private func getBestByDateInfo(
+        id: String,
+        completion: @escaping (Result<[BestByDateInfo], ApiRequestError>) -> Void
+    ) {
+        BestByDateRepository.shared.fetch(from: .init(groupId: id)) { result in
+            return DispatchQueue.main.async {
+                switch result {
+                case let .success(info):
+                    print("bestByDate.fetch succeed!")
+                    return completion(.success(info))
+                case let .failure(error):
+                    print(error)
+                    return completion(.failure(error))
+                }
+            }
+        }
     }
 }

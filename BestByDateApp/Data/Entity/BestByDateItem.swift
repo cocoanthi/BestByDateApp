@@ -2,8 +2,9 @@ import Foundation
 
 /// 消費/賞味期限情報
 struct BestByDateItem: Identifiable {
-    var id = UUID()
+    let id = UUID()
+    let groupId: Int
     var name: String
     var bestByDate: Date
-    var isNotify: Bool = true
+    var notifyFlag: Bool
 }
