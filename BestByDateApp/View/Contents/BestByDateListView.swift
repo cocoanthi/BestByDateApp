@@ -12,7 +12,6 @@ struct BestByDateListView: View {
 
     var body: some View {
         VStack(spacing: .zero) {
-            Text("期限切れリマインダー")
             NavigationView {
                 List {
                     ForEach(0..<vm.viewBestByDateItemList.count, id: \.self) { index in
@@ -61,6 +60,7 @@ struct BestByDateListView: View {
                     }
                 }
             }
+            .navigationTitle("期限切れリマインダー")
             Button(action: { vm.updateNotification() }) {
                 Text("Send Notification!!")
             }

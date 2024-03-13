@@ -17,21 +17,23 @@ class BestByDateViewModel: ObservableObject {
     
     init(groupInfo: GroupInfo) {
         self.groupInfo = groupInfo
-        getBestByDateInfo(id: groupInfo.groupId) { result in
-            switch result {
-            case let .success(info):
+        Task {
+            do {
+                let info = try await BestByDateRepository.shared.fetch(from: .init(groupId: groupInfo.groupId))
                 self.viewBestByDateItemList.append(contentsOf: info.map({ bestByDateInfo in
                     return BestByDateItem(
                         groupId: bestByDateInfo.groupId,
+                        serverId: bestByDateInfo.id,
                         name: bestByDateInfo.name,
                         bestByDate: bestByDateInfo.bestByDate,
                         notifyFlag: bestByDateInfo.nofityFlag ?? true
                     )
                 }))
                 self.oldBestByDateItemList = self.viewBestByDateItemList
-            case let .failure(error):
+            } catch {
                 print(error)
             }
+
         }
     }
     
@@ -41,6 +43,7 @@ class BestByDateViewModel: ObservableObject {
         withAnimation {
             let newItem = BestByDateItem(
                 groupId: Int(groupInfo.groupId) ?? -1,
+                serverId: nil,
                 name: "",
                 bestByDate: Date(),
                 notifyFlag: true,
@@ -66,6 +69,33 @@ class BestByDateViewModel: ObservableObject {
         // 作成されたItemが変更された場合はupdatedではなくcreatedの状態を継続する
         guard viewBestByDateItemList[index].state != .created else { return }
         viewBestByDateItemList[index].state = .updated
+    }
+    
+    func updateButtonTapped() {
+        Task {
+            do {
+                /// update処理
+                var updateList = viewBestByDateItemList.filter { $0.state == .updated }.map {
+                    return BestByDateInfo(groupId: $0.groupId, id: $0.serverId, name: $0.name, bestByDate: $0.bestByDate, nofityFlag: $0.notifyFlag)
+                }
+                _ = try await BestByDateRepository.shared.update(from: .init(groupInfo: updateList))
+                /// insert処理
+                var insertList = viewBestByDateItemList.filter { $0.state == .created }.map {
+                    return BestByDateInfo(groupId: $0.groupId, id: $0.serverId, name: $0.name, bestByDate: $0.bestByDate, nofityFlag: $0.notifyFlag)
+                }
+                _ = try await BestByDateRepository.shared.insert(from: .init(groupInfo: insertList))
+                /// delete処理
+                var deleteList = oldBestByDateItemList
+                // deleteListとviewBestByDateItemListのidを比較して、マッチした情報をoldから削除していく。最終的にoldに残った情報が削除情報になる
+                for viewValue in viewBestByDateItemList {
+                    deleteList.removeAll(where: {$0.id == viewValue.id})
+                }
+                print("oldBestByDateItemList = \(oldBestByDateItemList)")
+                _ = try await BestByDateRepository.shared.delete(from: .init(id: deleteList.compactMap { return $0.serverId }))
+            } catch {
+                print(error)
+            }
+        }
     }
     
     private func createNotificationInfo() -> [NotificationInfo] {
@@ -105,23 +135,5 @@ class BestByDateViewModel: ObservableObject {
         let notifyTimeInterval = (Int(bestByDateTimeInterval - nowDateTimeInterval) - notifyDayToSec) + notifyTimeToSec - currentTimeToSec
         print("\(notifyTimeInterval)")
         return notifyTimeInterval
-    }
-    
-    private func getBestByDateInfo(
-        id: String,
-        completion: @escaping (Result<[BestByDateInfo], ApiRequestError>) -> Void
-    ) {
-        BestByDateRepository.shared.fetch(from: .init(groupId: id)) { result in
-            return DispatchQueue.main.async {
-                switch result {
-                case let .success(info):
-                    print("bestByDate.fetch succeed!")
-                    return completion(.success(info))
-                case let .failure(error):
-                    print(error)
-                    return completion(.failure(error))
-                }
-            }
-        }
     }
 }

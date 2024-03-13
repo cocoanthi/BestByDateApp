@@ -4,6 +4,7 @@ import Foundation
 struct BestByDateItem: Identifiable, Equatable {
     let id = UUID()
     let groupId: Int
+    var serverId: Int?
     var name: String
     var bestByDate: Date
     var notifyFlag: Bool

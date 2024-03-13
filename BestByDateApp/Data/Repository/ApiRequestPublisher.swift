@@ -42,7 +42,7 @@ class ApiRequestPublisher<T: ApiRequestTemplate> {
             return completion(.failure(.parameterError))
         }
 
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
                 return completion(.failure(.parameterError))
@@ -81,13 +81,6 @@ class ApiRequestPublisher<T: ApiRequestTemplate> {
                 }
             } catch {
                 return nil
-            }
-        }
-        // DELETEメソッドでリクエストボディが必要なパターンに対応するため
-        if method != .get {
-            headerParams["charset"] = "UTF-8"
-            if headerParams["Content-Type"] == nil {
-                headerParams["Content-Type"] = "application/json"
             }
         }
         if !headerParams.isEmpty {
