@@ -25,6 +25,9 @@
 		2694DB852B9DFA4500FC4ADE /* GetOneItemGroupInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694DB842B9DFA4500FC4ADE /* GetOneItemGroupInfoRequest.swift */; };
 		2694DB872B9DFB0500FC4ADE /* GroupInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694DB862B9DFB0500FC4ADE /* GroupInfoRepository.swift */; };
 		2694DB8A2B9DFBE300FC4ADE /* GroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694DB892B9DFBE300FC4ADE /* GroupInfo.swift */; };
+		2694DB8C2BA09E2500FC4ADE /* PutBestByDateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694DB8B2BA09E2500FC4ADE /* PutBestByDateRequest.swift */; };
+		2694DB8E2BA0AB7200FC4ADE /* DeleteBestByDateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694DB8D2BA0AB7200FC4ADE /* DeleteBestByDateRequest.swift */; };
+		2694DB902BA2014F00FC4ADE /* PostBestByDateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694DB8F2BA2014F00FC4ADE /* PostBestByDateRequest.swift */; };
 		26B403262B865C3E00D98F08 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B403252B865C3E00D98F08 /* HomeView.swift */; };
 		26B4032A2B888F9A00D98F08 /* GroupCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B403292B888F9A00D98F08 /* GroupCreationView.swift */; };
 		26B4032C2B88904300D98F08 /* GroupDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B4032B2B88904300D98F08 /* GroupDeleteView.swift */; };
@@ -62,6 +65,9 @@
 		2694DB842B9DFA4500FC4ADE /* GetOneItemGroupInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOneItemGroupInfoRequest.swift; sourceTree = "<group>"; };
 		2694DB862B9DFB0500FC4ADE /* GroupInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfoRepository.swift; sourceTree = "<group>"; };
 		2694DB892B9DFBE300FC4ADE /* GroupInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfo.swift; sourceTree = "<group>"; };
+		2694DB8B2BA09E2500FC4ADE /* PutBestByDateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutBestByDateRequest.swift; sourceTree = "<group>"; };
+		2694DB8D2BA0AB7200FC4ADE /* DeleteBestByDateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteBestByDateRequest.swift; sourceTree = "<group>"; };
+		2694DB8F2BA2014F00FC4ADE /* PostBestByDateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBestByDateRequest.swift; sourceTree = "<group>"; };
 		26B403252B865C3E00D98F08 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		26B403292B888F9A00D98F08 /* GroupCreationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCreationView.swift; sourceTree = "<group>"; };
 		26B4032B2B88904300D98F08 /* GroupDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDeleteView.swift; sourceTree = "<group>"; };
@@ -164,6 +170,9 @@
 				260FC3642B88FB4F004148BE /* BestByDateRepository.swift */,
 				2629421B2B9776A900DBA853 /* GetBestByDateRequest.swift */,
 				2629421D2B97797500DBA853 /* BestByDateInfo.swift */,
+				2694DB8B2BA09E2500FC4ADE /* PutBestByDateRequest.swift */,
+				2694DB8D2BA0AB7200FC4ADE /* DeleteBestByDateRequest.swift */,
+				2694DB8F2BA2014F00FC4ADE /* PostBestByDateRequest.swift */,
 			);
 			path = BestByDate;
 			sourceTree = "<group>";
@@ -348,6 +357,7 @@
 				2694DB8A2B9DFBE300FC4ADE /* GroupInfo.swift in Sources */,
 				26EF99472A50703E0096C3D5 /* AppDelegate.swift in Sources */,
 				26D2CD842A4F254B00187BA7 /* BestByDateItem.swift in Sources */,
+				2694DB8C2BA09E2500FC4ADE /* PutBestByDateRequest.swift in Sources */,
 				26D2CD772A4F243B00187BA7 /* Persistence.swift in Sources */,
 				260FC35E2B88F6CB004148BE /* GroupHistoryViewModel.swift in Sources */,
 				26B403262B865C3E00D98F08 /* HomeView.swift in Sources */,
@@ -369,11 +379,13 @@
 				26D2CD862A4F276B00187BA7 /* BestByDateListView.swift in Sources */,
 				26B4032C2B88904300D98F08 /* GroupDeleteView.swift in Sources */,
 				2629420D2B97692D00DBA853 /* BaseUrlType.swift in Sources */,
+				2694DB902BA2014F00FC4ADE /* PostBestByDateRequest.swift in Sources */,
 				260FC3652B88FB4F004148BE /* BestByDateRepository.swift in Sources */,
 				2629420F2B97695400DBA853 /* HttpMethod.swift in Sources */,
 				26B403392B88E06000D98F08 /* CustomListRow.swift in Sources */,
 				26B403362B889EF000D98F08 /* CustomButton.swift in Sources */,
 				2694DB872B9DFB0500FC4ADE /* GroupInfoRepository.swift in Sources */,
+				2694DB8E2BA0AB7200FC4ADE /* DeleteBestByDateRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,23 +13,18 @@ final class GroupInfoRepository {
     private var cancellables = Set<AnyCancellable>()
     
     private init() {}
-    
-    func register() {
-        // TODO: 登録処理
-    }
 
-    func fetchOne(
-        from request: GetOneItemGroupInfoRequest,
-        completion: @escaping (Result<GroupInfo, ApiRequestError>) -> Void
-    ) {
-        request.publish(completion: { (result) in
-            switch result {
-            case let .success(data):
-                return completion(.success(data.groupInfo))
-            case let .failure(error):
-                return completion(.failure(error))
-            }
-        })
+    func fetchOne(from request: GetOneItemGroupInfoRequest) async throws -> GroupInfo {
+        try await withCheckedThrowingContinuation { continuation in
+            request.publish(completion: { (result) in
+                switch result {
+                case let .success(data):
+                    continuation.resume(returning: data.groupInfo)
+                case let .failure(error):
+                    continuation.resume(throwing: error)
+                }
+            })
+        }
     }
     
     func update() {

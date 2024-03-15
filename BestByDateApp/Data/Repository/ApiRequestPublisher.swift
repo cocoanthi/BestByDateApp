@@ -42,7 +42,7 @@ class ApiRequestPublisher<T: ApiRequestTemplate> {
             return completion(.failure(.parameterError))
         }
 
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
                 return completion(.failure(.parameterError))
@@ -62,7 +62,6 @@ class ApiRequestPublisher<T: ApiRequestTemplate> {
                 }
             } catch let error {
                 print("Error decoding JSON: \(error)")
-                print("Error decoding JSON: \(error.localizedDescription)")
                 return completion(.failure(.decodingFailed))
             }
         }.resume()
@@ -71,7 +70,7 @@ class ApiRequestPublisher<T: ApiRequestTemplate> {
     private func makeUrlRequest(url: URL) -> URLRequest? {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
-        if let bodyParams = bodyParams {
+        if let bodyParams = bodyParams, method != .get  {
             do {
                 // 最上位階層がArrayであるデータパターンの対応: keyを空文字にした場合は、valueの先頭のみをbodyに入れる(map内は一件のみの想定)
                 if let body = bodyParams[""] as? String {
@@ -83,16 +82,9 @@ class ApiRequestPublisher<T: ApiRequestTemplate> {
                 return nil
             }
         }
-        // DELETEメソッドでリクエストボディが必要なパターンに対応するため
-        if method != .get {
-            headerParams["charset"] = "UTF-8"
-            if headerParams["Content-Type"] == nil {
-                headerParams["Content-Type"] = "application/json"
-            }
-        }
-        if !headerParams.isEmpty {
-            urlRequest.allHTTPHeaderFields = headerParams
-        }
+//        if !headerParams.isEmpty {
+//            urlRequest.allHTTPHeaderFields = headerParams
+//        }
         return urlRequest
     }
 

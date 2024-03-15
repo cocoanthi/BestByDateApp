@@ -13,31 +13,57 @@ final class BestByDateRepository {
     private var cancellables = Set<AnyCancellable>()
     
     private init() {}
-    
-    func register() {
-        // TODO: 登録処理
-    }
 
-    func fetch(
-        from request: GetBestByDateRequest,
-        completion: @escaping (Result<[BestByDateInfo], ApiRequestError>) -> Void
-    ) {
-        request.publish(completion: { (result) in
-            switch result {
-            case let .success(data):
-                return completion(.success(data.bestByDateInfo))
-            case let .failure(error):
-                return completion(.failure(error))
-            }
-        })
+    func fetch(from request: GetBestByDateRequest) async throws -> [BestByDateInfo] {
+        try await withCheckedThrowingContinuation { continuation in
+            request.publish(completion: { (result) in
+                switch result {
+                case let .success(data):
+                    continuation.resume(returning: data.bestByDateInfo)
+                case let .failure(error):
+                    continuation.resume(throwing: error)
+                }
+            })
+        }
     }
     
-    func update() {
-        // TODO: 更新処理
+    func insert(from request: PutBestByDateRequest) async throws -> Bool {
+        try await withCheckedThrowingContinuation { continuation in
+            request.publish(completion: { (result) in
+                switch result {
+                case .success:
+                    continuation.resume(returning: true)
+                case let .failure(error):
+                    continuation.resume(throwing: error)
+                }
+            })
+        }
     }
     
-    func delete() {
-        // TODO: 削除処理
+    func update(from request: PostBestByDateRequest) async throws -> Bool {
+        try await withCheckedThrowingContinuation { continuation in
+            request.publish(completion: { (result) in
+                switch result {
+                case .success:
+                    continuation.resume(returning: true)
+                case let .failure(error):
+                    continuation.resume(throwing: error)
+                }
+            })
+        }
+    }
+    
+    func delete(from request: DeleteBestByDateRequest) async throws -> Bool {
+        try await withCheckedThrowingContinuation { continuation in
+            request.publish(completion: { (result) in
+                switch result {
+                case .success:
+                    continuation.resume(returning: true)
+                case let .failure(error):
+                    continuation.resume(throwing: error)
+                }
+            })
+        }
     }
     
 }
