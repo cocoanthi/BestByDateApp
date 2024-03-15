@@ -9,14 +9,24 @@ import SwiftUI
 
 struct GroupCreationView: View {
     @StateObject var viewModel: GroupCreationViewModel
+    @State private var groupName = ""
     @State private var password = ""
     
     var body: some View {
         Group {
             Spacer()
-            Text("作成するグループに入室するためのパスワードを設定してください。")
+            Text("以下の項目を設定してください。")
                 .padding()
             
+            Text("グループ名")
+                .padding()
+            VStack(alignment: .leading, spacing: 5) {
+                TextField("group_name", text: $groupName)
+                    .textFieldStyle(.roundedBorder)
+            }
+            .padding(.horizontal, UIScreen.main.bounds.width / 8)
+            Text("パスワード")
+                .padding()
             VStack(alignment: .leading, spacing: 5) {
                 TextField("password", text: $password)
                     .textFieldStyle(.roundedBorder)
@@ -25,13 +35,17 @@ struct GroupCreationView: View {
             Spacer()
             
             CustomButton(action: {
-                viewModel.registerGroup()
+                viewModel.registerGroup(groupName: groupName, password: password)
             }, text: "作成", width: UIScreen.main.bounds.width / 2)
                 .padding()
         }
         .navigationTitle("グループ作成")
         .navigationDestination(isPresented: $viewModel.isLoaded) {
-//            BestByDateListView()
+            BestByDateListView(vm: .init(groupInfo: .init(
+                groupId: viewModel.groupInfo?.groupId ?? "",
+                groupName: viewModel.groupInfo?.groupName ?? "",
+                groupPassword: viewModel.groupInfo?.groupPassword ?? ""
+            )))
         }
     }
 }

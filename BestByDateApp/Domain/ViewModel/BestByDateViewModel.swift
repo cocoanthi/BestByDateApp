@@ -39,23 +39,29 @@ class BestByDateViewModel: ObservableObject {
     }
     
     func addItem() {
-        guard let lastItem = viewBestByDateItemList.last,
-              !lastItem.name.isEmpty else { return }
-        withAnimation {
-            let newItem = BestByDateItem(
-                groupId: Int(groupInfo.groupId) ?? -1,
-                serverId: nil,
-                name: "",
-                bestByDate: Date(),
-                notifyFlag: 1,
-                state: .created
-            )
-            viewBestByDateItemList.append(newItem)
+        let addItem = {
+            withAnimation {
+                let newItem = BestByDateItem(
+                    groupId: self.groupInfo.groupId,
+                    serverId: nil,
+                    name: "",
+                    bestByDate: Date(),
+                    notifyFlag: 1,
+                    state: .created
+                )
+                self.viewBestByDateItemList.append(newItem)
+            }
+        }
+        
+        if viewBestByDateItemList.isEmpty {
+            addItem()
+        } else if let lastItem = viewBestByDateItemList.last, !lastItem.name.isEmpty {
+            addItem()
         }
     }
     
     func toggle(index: Int) {
-        viewBestByDateItemList[index].notifyFlag = viewBestByDateItemList[index].notifyFlag == 1 ? 1 : 0
+        viewBestByDateItemList[index].notifyFlag = viewBestByDateItemList[index].notifyFlag == 1 ? 0 : 1
     }
     
     func updateNotification() {
@@ -74,6 +80,10 @@ class BestByDateViewModel: ObservableObject {
         // 作成されたItemが変更された場合はupdatedではなくcreatedの状態を継続する
         guard viewBestByDateItemList[index].state != .created else { return }
         viewBestByDateItemList[index].state = .updated
+    }
+    
+    func copy(str: String) {
+        UIPasteboard.general.string = str
     }
     
     func updateButtonTapped() {

@@ -52,6 +52,16 @@ struct BestByDateListView: View {
                     .onDelete(perform: vm.deleteItems)
                 }
                 .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(action: {
+                            vm.copy(str: vm.groupInfo.groupId)
+                        }) {
+                            HStack(spacing: 6) {
+                                Text("group_id: \(vm.groupInfo.groupId)")
+                                Label("", systemImage: "doc.on.doc.fill")
+                            }
+                        }
+                    }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         EditButton()
                     }
