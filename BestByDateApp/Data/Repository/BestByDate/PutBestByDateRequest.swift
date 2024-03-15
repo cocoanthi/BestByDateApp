@@ -1,7 +1,7 @@
 import Foundation
 
 struct PutBestByDateRequest: ApiRequestTemplate {
-    typealias Response = PutBestByDateResponse
+    typealias Response = EmptyResponse
     
     var baseUrlType: BaseUrlType = .bestByDateRequest
 
@@ -21,13 +21,20 @@ struct PutBestByDateRequest: ApiRequestTemplate {
         ]
     }
     
+    private var formatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        formatter.locale = Locale(identifier: "ja_JP")
+        return formatter
+    }
+    
     init(groupInfo: [BestByDateInfo]) {
-        bodyParams = ["group_info": groupInfo.map {
+        bodyParams = ["best_by_date_info": groupInfo.map {
             return [
                 "group_id": $0.groupId,
                 "name": $0.name,
-                "best_by_date": $0.bestByDate,
-                "notify_flag": $0.nofityFlag ?? true
+                "best_by_date": formatter.string(from: $0.bestByDate),
+                "notify_flag": $0.notifyFlag
             ] as [String : Any]
         }]
     }

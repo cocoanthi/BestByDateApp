@@ -27,7 +27,7 @@ final class BestByDateRepository {
         }
     }
     
-    func update(from request: PutBestByDateRequest) async throws -> Bool {
+    func insert(from request: PutBestByDateRequest) async throws -> Bool {
         try await withCheckedThrowingContinuation { continuation in
             request.publish(completion: { (result) in
                 switch result {
@@ -40,7 +40,7 @@ final class BestByDateRepository {
         }
     }
     
-    func insert(from request: PostBestByDateRequest) async throws -> Bool {
+    func update(from request: PostBestByDateRequest) async throws -> Bool {
         try await withCheckedThrowingContinuation { continuation in
             request.publish(completion: { (result) in
                 switch result {

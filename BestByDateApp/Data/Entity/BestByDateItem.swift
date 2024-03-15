@@ -7,8 +7,12 @@ struct BestByDateItem: Identifiable, Equatable {
     var serverId: Int?
     var name: String
     var bestByDate: Date
-    var notifyFlag: Bool
+    var notifyFlag: Int
     var state: ItemState = .none
+    
+    var isNotify: Bool {
+        notifyFlag == 1
+    }
     
     enum ItemState {
         case created

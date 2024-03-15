@@ -1,7 +1,7 @@
 import Foundation
 
 struct DeleteBestByDateRequest: ApiRequestTemplate {
-    typealias Response = DeleteBestByDateResponse
+    typealias Response = EmptyResponse
     
     var baseUrlType: BaseUrlType = .bestByDateRequest
 
@@ -26,7 +26,4 @@ struct DeleteBestByDateRequest: ApiRequestTemplate {
             "id": [ id.map { return $0 } ]
         ]
     }
-}
-
-struct DeleteBestByDateResponse: Decodable {
 }

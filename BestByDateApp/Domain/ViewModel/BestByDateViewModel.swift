@@ -19,21 +19,22 @@ class BestByDateViewModel: ObservableObject {
         self.groupInfo = groupInfo
         Task {
             do {
-                let info = try await BestByDateRepository.shared.fetch(from: .init(groupId: groupInfo.groupId))
-                self.viewBestByDateItemList.append(contentsOf: info.map({ bestByDateInfo in
-                    return BestByDateItem(
-                        groupId: bestByDateInfo.groupId,
-                        serverId: bestByDateInfo.id,
-                        name: bestByDateInfo.name,
-                        bestByDate: bestByDateInfo.bestByDate,
-                        notifyFlag: bestByDateInfo.nofityFlag ?? true
-                    )
-                }))
-                self.oldBestByDateItemList = self.viewBestByDateItemList
+                    let info = try await BestByDateRepository.shared.fetch(from: .init(groupId: groupInfo.groupId))
+                DispatchQueue.main.async {
+                    self.viewBestByDateItemList.append(contentsOf: info.map({ bestByDateInfo in
+                        return BestByDateItem(
+                            groupId: bestByDateInfo.groupId,
+                            serverId: bestByDateInfo.id,
+                            name: bestByDateInfo.name,
+                            bestByDate: bestByDateInfo.bestByDate,
+                            notifyFlag: bestByDateInfo.notifyFlag
+                        )
+                    }))
+                    self.oldBestByDateItemList = self.viewBestByDateItemList
+                }
             } catch {
                 print(error)
             }
-
         }
     }
     
@@ -46,11 +47,15 @@ class BestByDateViewModel: ObservableObject {
                 serverId: nil,
                 name: "",
                 bestByDate: Date(),
-                notifyFlag: true,
+                notifyFlag: 1,
                 state: .created
             )
             viewBestByDateItemList.append(newItem)
         }
+    }
+    
+    func toggle(index: Int) {
+        viewBestByDateItemList[index].notifyFlag = viewBestByDateItemList[index].notifyFlag == 1 ? 1 : 0
     }
     
     func updateNotification() {
@@ -75,23 +80,33 @@ class BestByDateViewModel: ObservableObject {
         Task {
             do {
                 /// update処理
-                var updateList = viewBestByDateItemList.filter { $0.state == .updated }.map {
-                    return BestByDateInfo(groupId: $0.groupId, id: $0.serverId, name: $0.name, bestByDate: $0.bestByDate, nofityFlag: $0.notifyFlag)
+                let updateList = viewBestByDateItemList.filter { $0.state == .updated }.map {
+                    return BestByDateInfo(groupId: $0.groupId, id: $0.serverId, name: $0.name, bestByDate: $0.bestByDate, notifyFlag: $0.notifyFlag)
                 }
-                _ = try await BestByDateRepository.shared.update(from: .init(groupInfo: updateList))
+                print("updateList = \(updateList)")
+                if !updateList.isEmpty {
+                    _ = try? await BestByDateRepository.shared.update(from: .init(groupInfo: updateList))
+                }
+                
                 /// insert処理
-                var insertList = viewBestByDateItemList.filter { $0.state == .created }.map {
-                    return BestByDateInfo(groupId: $0.groupId, id: $0.serverId, name: $0.name, bestByDate: $0.bestByDate, nofityFlag: $0.notifyFlag)
+                let insertList = viewBestByDateItemList.filter { $0.state == .created }.map {
+                    return BestByDateInfo(groupId: $0.groupId, id: $0.serverId, name: $0.name, bestByDate: $0.bestByDate, notifyFlag: $0.notifyFlag)
                 }
-                _ = try await BestByDateRepository.shared.insert(from: .init(groupInfo: insertList))
+                print("insertList = \(insertList)")
+                if !insertList.isEmpty {
+                    _ = try? await BestByDateRepository.shared.insert(from: .init(groupInfo: insertList))
+                }
+                
                 /// delete処理
                 var deleteList = oldBestByDateItemList
                 // deleteListとviewBestByDateItemListのidを比較して、マッチした情報をoldから削除していく。最終的にoldに残った情報が削除情報になる
                 for viewValue in viewBestByDateItemList {
                     deleteList.removeAll(where: {$0.id == viewValue.id})
                 }
-                print("oldBestByDateItemList = \(oldBestByDateItemList)")
-                _ = try await BestByDateRepository.shared.delete(from: .init(id: deleteList.compactMap { return $0.serverId }))
+                print("deleteList = \(deleteList)")
+                if !deleteList.isEmpty {
+                    _ = try? await BestByDateRepository.shared.delete(from: .init(id: deleteList.compactMap { return $0.serverId }))
+                }
             } catch {
                 print(error)
             }
@@ -108,7 +123,7 @@ class BestByDateViewModel: ObservableObject {
                     body: "",
                     timeInterval: createTimeInterval(notificationDate: item.bestByDate),
                     isRepeat: false,
-                    isNotify: item.notifyFlag
+                    isNotify: item.isNotify
                 )
             )
         }

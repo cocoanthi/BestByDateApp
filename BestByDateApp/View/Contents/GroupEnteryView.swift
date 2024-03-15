@@ -31,7 +31,6 @@ struct GroupEnteryView: View {
             Spacer()
             
             CustomButton(action: {
-                // TODO: 認証処理、isLoadedをtrueにする処理を入れる
                 viewModel.authorizeEntryGroup(id: id, password: password)
             }, text: "入室", width: UIScreen.main.bounds.width / 2)
                 .padding()

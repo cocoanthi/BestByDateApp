@@ -7,5 +7,9 @@ struct BestByDateInfo: Decodable {
     let name: String
     let bestByDate: Date
     // TODO: うまくパースできない。おそらくdb側の問題なのであとで対応
-    let nofityFlag: Bool?
+    let notifyFlag: Int
+    
+    var isNotify: Bool {
+        notifyFlag == 1
+    }
 }
