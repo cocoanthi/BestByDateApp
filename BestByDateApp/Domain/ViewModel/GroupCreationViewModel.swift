@@ -10,6 +10,7 @@ import Foundation
 class GroupCreationViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var hasGroupInfo: Bool = false
+    @Published var showsAlert: Bool = false
     @Published var groupInfo: GroupInfo? {
         didSet {
             hasGroupInfo = groupInfo != nil
@@ -24,6 +25,7 @@ class GroupCreationViewModel: ObservableObject {
                 defer {
                     DispatchQueue.main.async {
                         self.isLoading = false
+                        self.showsAlert = self.groupInfo == nil
                     }
                 }
                 

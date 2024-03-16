@@ -8,17 +8,29 @@
 import Foundation
 
 class GroupEnteryViewModel: ObservableObject {
-    @Published var isLoaded = false
+    @Published var isLoading = false
+    @Published var hasGroupInfo: Bool = false
+    @Published var showsAlert: Bool = false
+
     @Published var groupInfo: GroupInfo?
+
     
     func authorizeEntryGroup(id: String, password: String) {
+        isLoading = true
         Task {
             do {
+                // 終了前にインジケータを動かさないようにする
+                defer {
+                    DispatchQueue.main.async {
+                        self.isLoading = false
+                        self.showsAlert = self.groupInfo == nil
+                    }
+                }
+                
                 let info = try await GroupInfoRepository.shared.fetchOne(from: .init(groupId: id, password: password))
                 print("groupInfo.fetchOne succeed!")
                 DispatchQueue.main.async {
                     self.groupInfo = info
-                    self.isLoaded = true
                 }
             } catch {
                 print(error)

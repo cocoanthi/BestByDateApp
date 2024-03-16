@@ -50,7 +50,7 @@ struct GroupCreationView: View {
             }
             ProgressIndicator(isLoading: viewModel.isLoading)
         }
-   
+        .alert("グループの作成に失敗しました", isPresented: $viewModel.showsAlert) {}
     }
 }
 
