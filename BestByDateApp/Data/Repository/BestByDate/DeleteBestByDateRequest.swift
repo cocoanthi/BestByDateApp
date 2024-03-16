@@ -23,7 +23,7 @@ struct DeleteBestByDateRequest: ApiRequestTemplate {
     
     init(id: [Int]) {
         bodyParams = [
-            "id": [ id.map { return $0 } ]
-        ]
+            "id": id.map { return $0 }
+        ]        
     }
 }

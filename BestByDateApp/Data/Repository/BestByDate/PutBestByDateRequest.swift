@@ -29,6 +29,8 @@ struct PutBestByDateRequest: ApiRequestTemplate {
     }
     
     init(groupInfo: [BestByDateInfo]) {
+        guard !groupInfo.isEmpty else { return }
+        
         bodyParams = ["best_by_date_info": groupInfo.map {
             return [
                 "group_id": $0.groupId,
