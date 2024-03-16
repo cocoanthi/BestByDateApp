@@ -12,7 +12,11 @@ class GroupEnteryViewModel: ObservableObject {
     @Published var hasGroupInfo: Bool = false
     @Published var showsAlert: Bool = false
 
-    @Published var groupInfo: GroupInfo?
+    @Published var groupInfo: GroupInfo? {
+        didSet {
+            hasGroupInfo = groupInfo != nil
+        }
+    }
 
     
     func authorizeEntryGroup(id: String, password: String) {
