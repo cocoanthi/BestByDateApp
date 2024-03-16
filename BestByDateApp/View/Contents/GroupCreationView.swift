@@ -13,40 +13,44 @@ struct GroupCreationView: View {
     @State private var password = ""
     
     var body: some View {
-        Group {
-            Spacer()
-            Text("以下の項目を設定してください。")
-                .padding()
-            
-            Text("グループ名")
-                .padding()
-            VStack(alignment: .leading, spacing: 5) {
-                TextField("group_name", text: $groupName)
-                    .textFieldStyle(.roundedBorder)
+        ZStack {
+            VStack(spacing: .zero) {
+                Spacer()
+                Text("以下の項目を設定してください。")
+                    .padding()
+                
+                Text("グループ名")
+                    .padding()
+                VStack(alignment: .leading, spacing: 5) {
+                    TextField("group_name", text: $groupName)
+                        .textFieldStyle(.roundedBorder)
+                }
+                .padding(.horizontal, UIScreen.main.bounds.width / 8)
+                Text("パスワード")
+                    .padding()
+                VStack(alignment: .leading, spacing: 5) {
+                    TextField("password", text: $password)
+                        .textFieldStyle(.roundedBorder)
+                }
+                .padding(.horizontal, UIScreen.main.bounds.width / 8)
+                Spacer()
+                
+                CustomButton(action: {
+                    viewModel.registerGroup(groupName: groupName, password: password)
+                }, text: "作成", width: UIScreen.main.bounds.width / 2)
+                    .padding()
             }
-            .padding(.horizontal, UIScreen.main.bounds.width / 8)
-            Text("パスワード")
-                .padding()
-            VStack(alignment: .leading, spacing: 5) {
-                TextField("password", text: $password)
-                    .textFieldStyle(.roundedBorder)
+            .navigationTitle("グループ作成")
+            .navigationDestination(isPresented: $viewModel.hasGroupInfo) {
+                BestByDateListView(vm: .init(groupInfo: .init(
+                    groupId: viewModel.groupInfo?.groupId ?? "",
+                    groupName: viewModel.groupInfo?.groupName ?? "",
+                    groupPassword: viewModel.groupInfo?.groupPassword ?? ""
+                )))
             }
-            .padding(.horizontal, UIScreen.main.bounds.width / 8)
-            Spacer()
-            
-            CustomButton(action: {
-                viewModel.registerGroup(groupName: groupName, password: password)
-            }, text: "作成", width: UIScreen.main.bounds.width / 2)
-                .padding()
+            ProgressIndicator(isLoading: viewModel.isLoading)
         }
-        .navigationTitle("グループ作成")
-        .navigationDestination(isPresented: $viewModel.isLoaded) {
-            BestByDateListView(vm: .init(groupInfo: .init(
-                groupId: viewModel.groupInfo?.groupId ?? "",
-                groupName: viewModel.groupInfo?.groupName ?? "",
-                groupPassword: viewModel.groupInfo?.groupPassword ?? ""
-            )))
-        }
+   
     }
 }
 
