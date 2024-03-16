@@ -44,6 +44,8 @@
 		26D2CD842A4F254B00187BA7 /* BestByDateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2CD832A4F254B00187BA7 /* BestByDateItem.swift */; };
 		26D2CD862A4F276B00187BA7 /* BestByDateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2CD852A4F276B00187BA7 /* BestByDateListView.swift */; };
 		26D2CD882A4F285300187BA7 /* BestByDateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2CD872A4F285300187BA7 /* BestByDateViewModel.swift */; };
+		26E664562BA496BA0098A61B /* PutGroupInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E664552BA496BA0098A61B /* PutGroupInfoRequest.swift */; };
+		26E6645A2BA56A740098A61B /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E664592BA56A740098A61B /* ProgressView.swift */; };
 		26EF99472A50703E0096C3D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EF99462A50703E0096C3D5 /* AppDelegate.swift */; };
 		26EF994A2A5078630096C3D5 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EF99492A5078630096C3D5 /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
@@ -85,6 +87,8 @@
 		26D2CD832A4F254B00187BA7 /* BestByDateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateItem.swift; sourceTree = "<group>"; };
 		26D2CD852A4F276B00187BA7 /* BestByDateListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateListView.swift; sourceTree = "<group>"; };
 		26D2CD872A4F285300187BA7 /* BestByDateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateViewModel.swift; sourceTree = "<group>"; };
+		26E664552BA496BA0098A61B /* PutGroupInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutGroupInfoRequest.swift; sourceTree = "<group>"; };
+		26E664592BA56A740098A61B /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		26EF99462A50703E0096C3D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26EF99492A5078630096C3D5 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,6 +187,7 @@
 				2694DB842B9DFA4500FC4ADE /* GetOneItemGroupInfoRequest.swift */,
 				2694DB862B9DFB0500FC4ADE /* GroupInfoRepository.swift */,
 				2694DB892B9DFBE300FC4ADE /* GroupInfo.swift */,
+				26E664552BA496BA0098A61B /* PutGroupInfoRequest.swift */,
 			);
 			path = GroupInfo;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 		26B403312B889CB100D98F08 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				26E664592BA56A740098A61B /* ProgressView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -370,6 +376,7 @@
 				262942112B97697B00DBA853 /* ApiRequestError.swift in Sources */,
 				26D2CD7A2A4F243B00187BA7 /* BestByDateApp.xcdatamodeld in Sources */,
 				260FC3582B88F69A004148BE /* GroupCreationViewModel.swift in Sources */,
+				26E664562BA496BA0098A61B /* PutGroupInfoRequest.swift in Sources */,
 				26D2CD6E2A4F243600187BA7 /* BestByDateAppApp.swift in Sources */,
 				2694DB852B9DFA4500FC4ADE /* GetOneItemGroupInfoRequest.swift in Sources */,
 				26D2CD882A4F285300187BA7 /* BestByDateViewModel.swift in Sources */,
@@ -384,6 +391,7 @@
 				2629420F2B97695400DBA853 /* HttpMethod.swift in Sources */,
 				26B403392B88E06000D98F08 /* CustomListRow.swift in Sources */,
 				26B403362B889EF000D98F08 /* CustomButton.swift in Sources */,
+				26E6645A2BA56A740098A61B /* ProgressView.swift in Sources */,
 				2694DB872B9DFB0500FC4ADE /* GroupInfoRepository.swift in Sources */,
 				2694DB8E2BA0AB7200FC4ADE /* DeleteBestByDateRequest.swift in Sources */,
 			);

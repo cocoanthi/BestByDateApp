@@ -29,7 +29,7 @@ struct BestByDateListView: View {
                             Spacer().frame(width: 10)
                             Button(
                                 // 通知ボタン押下で通知可否状態を変更する
-                                action: { vm.toggle(index: index) }
+                                action: { vm.notifyToggleTapped(index: index) }
                             ){
                                 // 通知可否の状態に応じて色を切り替える
                                 Text("通知")
@@ -49,15 +49,25 @@ struct BestByDateListView: View {
                         
                     }
                     // EditButton経由で削除した場合に呼ばれる
-                    .onDelete(perform: vm.deleteItems)
+                    .onDelete(perform: vm.deleteButtonTapped)
                 }
                 .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(action: {
+                            vm.copyButtonTapped(str: vm.groupInfo.groupId)
+                        }) {
+                            HStack(spacing: 6) {
+                                Text("group_id: \(vm.groupInfo.groupId)")
+                                Label("", systemImage: "doc.on.doc.fill")
+                            }
+                        }
+                    }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         EditButton()
                     }
                     ToolbarItem {
                         // ＋ボタン
-                        Button(action: vm.addItem) {
+                        Button(action: vm.addItemButtonTapped) {
                             Label("Add Item", systemImage: "plus")
                         }
                     }
@@ -71,7 +81,7 @@ struct BestByDateListView: View {
                     Text("Save")
                 }
             )
-            Button(action: { vm.updateNotification() }) {
+            Button(action: { vm.notifyButtonTapped() }) {
                 Text("Send Notification!!")
             }
         }

@@ -27,8 +27,17 @@ final class GroupInfoRepository {
         }
     }
     
-    func update() {
-        // TODO: 更新処理
+    func insert(from request: PutGroupInfoRequest) async throws -> GroupInfo {
+        try await withCheckedThrowingContinuation { continuation in
+            request.publish(completion: { (result) in
+                switch result {
+                case let .success(info):
+                    continuation.resume(returning: info.groupInfo)
+                case let .failure(error):
+                    continuation.resume(throwing: error)
+                }
+            })
+        }
     }
     
     func delete() {
