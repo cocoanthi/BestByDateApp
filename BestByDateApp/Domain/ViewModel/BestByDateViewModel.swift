@@ -3,6 +3,7 @@ import SwiftUI
 class BestByDateViewModel: ObservableObject {
     /// 画面表示用Item
     @Published var viewBestByDateItemList: [BestByDateItem] = []
+    @Published var isLoading: Bool = false
     let groupInfo: GroupInfo
     
     var dateFormatter: DateFormatter {
@@ -18,23 +19,7 @@ class BestByDateViewModel: ObservableObject {
     init(groupInfo: GroupInfo) {
         self.groupInfo = groupInfo
         Task {
-            do {
-                    let info = try await BestByDateRepository.shared.fetch(from: .init(groupId: groupInfo.groupId))
-                DispatchQueue.main.async {
-                    self.viewBestByDateItemList.append(contentsOf: info.map({ bestByDateInfo in
-                        return BestByDateItem(
-                            groupId: bestByDateInfo.groupId,
-                            serverId: bestByDateInfo.id,
-                            name: bestByDateInfo.name,
-                            bestByDate: bestByDateInfo.bestByDate,
-                            notifyFlag: bestByDateInfo.notifyFlag
-                        )
-                    }))
-                    self.oldBestByDateItemList = self.viewBestByDateItemList
-                }
-            } catch {
-                print(error)
-            }
+            await updateListRequest()
         }
     }
     
@@ -66,15 +51,24 @@ class BestByDateViewModel: ObservableObject {
         viewBestByDateItemList[index].notifyFlag = viewBestByDateItemList[index].notifyFlag == 1 ? 0 : 1
     }
     
-    func notifyButtonTapped() {
+    func notifyButtonTapped() -> [String] {
         // TODO: 一旦全て消してから全て登録し直す。差分のみ更新した方が良い場合は対応する
         NotificationManager.instance.deleteAllNotification()
-        NotificationManager.instance.sendNotification(notificationInfoList: createNotificationInfo())
+        let target = createNotificationInfo()
+        NotificationManager.instance.sendNotification(notificationInfoList: target)
+        
+        var targetNames: [String] = []
+        for info in target {
+            if info.isNotify {
+                targetNames.append(info.title)
+            }
+        }
+        return targetNames
     }
     
-    func deleteButtonTapped(offsets: IndexSet) {
-        withAnimation {
-            viewBestByDateItemList.remove(atOffsets: offsets)
+    func deleteButtonTapped(index: Int) {
+        if viewBestByDateItemList[safe: index] != nil {
+            viewBestByDateItemList.remove(at: index)
         }
     }
     
@@ -89,7 +83,14 @@ class BestByDateViewModel: ObservableObject {
     }
     
     func updateButtonTapped() {
+        self.isLoading = true
         Task {
+            defer {
+                resetBestByDateItemState()
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                }
+            }
             var result = ["update":false, "insert":false, "delete":false]
             /// update処理
             let updateList = viewBestByDateItemList.filter { $0.state == .updated }.map {
@@ -98,6 +99,8 @@ class BestByDateViewModel: ObservableObject {
             print("updateList = \(updateList)")
             if !updateList.isEmpty {
                 result["update"] = try? await BestByDateRepository.shared.update(from: .init(groupInfo: updateList))
+            } else {
+                result["update"] = true
             }
             
             /// insert処理
@@ -107,8 +110,9 @@ class BestByDateViewModel: ObservableObject {
             print("insertList = \(insertList)")
             if !insertList.isEmpty {
                 result["insert"] = try? await BestByDateRepository.shared.insert(from: .init(groupInfo: insertList))
+            } else {
+                result["insert"] = true
             }
-            
             /// delete処理
             var deleteList = oldBestByDateItemList
             // deleteListとviewBestByDateItemListのidを比較して、マッチした情報をoldから削除していく。最終的にoldに残った情報が削除情報になる
@@ -118,11 +122,14 @@ class BestByDateViewModel: ObservableObject {
             print("deleteList = \(deleteList)")
             if !deleteList.isEmpty {
                 result["delete"] = try? await BestByDateRepository.shared.delete(from: .init(id: deleteList.compactMap { return $0.serverId }))
+            } else {
+                result["delete"] = true
             }
             
-            let failedProcess = result.filter { $0.value == true }
+            let failedProcess = result.filter { $0.value == false }
             print("failedProcess \(failedProcess)")
 
+            await updateListRequest()
         }
     }
     
@@ -165,5 +172,38 @@ class BestByDateViewModel: ObservableObject {
         let notifyTimeInterval = (Int(bestByDateTimeInterval - nowDateTimeInterval) - notifyDayToSec) + notifyTimeToSec - currentTimeToSec
         print("\(notifyTimeInterval)")
         return notifyTimeInterval
+    }
+    
+    private func resetBestByDateItemState() {
+        DispatchQueue.main.async {
+            for index in 0..<self.viewBestByDateItemList.count {
+                if self.viewBestByDateItemList[safe: index] != nil {
+                    self.viewBestByDateItemList[index].state = .none
+                }
+            }
+        }
+    }
+    
+    private func updateListRequest() async {
+        Task {
+            do {
+                let info = try await BestByDateRepository.shared.fetch(from: .init(groupId: groupInfo.groupId))
+                DispatchQueue.main.async {
+                    self.viewBestByDateItemList.removeAll()
+                    self.viewBestByDateItemList.append(contentsOf: info.map({ bestByDateInfo in
+                        return BestByDateItem(
+                            groupId: bestByDateInfo.groupId,
+                            serverId: bestByDateInfo.id,
+                            name: bestByDateInfo.name,
+                            bestByDate: bestByDateInfo.bestByDate,
+                            notifyFlag: bestByDateInfo.notifyFlag
+                        )
+                    }))
+                    self.oldBestByDateItemList = self.viewBestByDateItemList
+                }
+            } catch {
+                print(error)
+            }
+        }
     }
 }

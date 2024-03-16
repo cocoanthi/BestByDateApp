@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26010A032BA5BB7700BEF862 /* Collection+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26010A022BA5BB7700BEF862 /* Collection+.swift */; };
+		26010A052BA5BC4000BEF862 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26010A042BA5BC4000BEF862 /* Array+.swift */; };
+		26010A072BA5C17800BEF862 /* TapGestureWithEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26010A062BA5C17800BEF862 /* TapGestureWithEffect.swift */; };
+		26010A092BA5DCAE00BEF862 /* Binding+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26010A082BA5DCAE00BEF862 /* Binding+.swift */; };
 		260FC3582B88F69A004148BE /* GroupCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FC3572B88F69A004148BE /* GroupCreationViewModel.swift */; };
 		260FC35A2B88F6AC004148BE /* GroupDeleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FC3592B88F6AC004148BE /* GroupDeleteViewModel.swift */; };
 		260FC35C2B88F6B7004148BE /* GroupEnteryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FC35B2B88F6B7004148BE /* GroupEnteryViewModel.swift */; };
@@ -51,6 +55,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26010A022BA5BB7700BEF862 /* Collection+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+.swift"; sourceTree = "<group>"; };
+		26010A042BA5BC4000BEF862 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
+		26010A062BA5C17800BEF862 /* TapGestureWithEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureWithEffect.swift; sourceTree = "<group>"; };
+		26010A082BA5DCAE00BEF862 /* Binding+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+.swift"; sourceTree = "<group>"; };
 		260FC3572B88F69A004148BE /* GroupCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCreationViewModel.swift; sourceTree = "<group>"; };
 		260FC3592B88F6AC004148BE /* GroupDeleteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDeleteViewModel.swift; sourceTree = "<group>"; };
 		260FC35B2B88F6B7004148BE /* GroupEnteryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupEnteryViewModel.swift; sourceTree = "<group>"; };
@@ -195,7 +203,9 @@
 		26B403312B889CB100D98F08 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				26E664592BA56A740098A61B /* ProgressView.swift */,
+				26010A022BA5BB7700BEF862 /* Collection+.swift */,
+				26010A042BA5BC4000BEF862 /* Array+.swift */,
+				26010A082BA5DCAE00BEF862 /* Binding+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -203,8 +213,10 @@
 		26B4033A2B88E13800D98F08 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				26E664592BA56A740098A61B /* ProgressView.swift */,
 				26B403382B88E06000D98F08 /* CustomListRow.swift */,
 				26B403352B889EF000D98F08 /* CustomButton.swift */,
+				26010A062BA5C17800BEF862 /* TapGestureWithEffect.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -364,11 +376,13 @@
 				26EF99472A50703E0096C3D5 /* AppDelegate.swift in Sources */,
 				26D2CD842A4F254B00187BA7 /* BestByDateItem.swift in Sources */,
 				2694DB8C2BA09E2500FC4ADE /* PutBestByDateRequest.swift in Sources */,
+				26010A032BA5BB7700BEF862 /* Collection+.swift in Sources */,
 				26D2CD772A4F243B00187BA7 /* Persistence.swift in Sources */,
 				260FC35E2B88F6CB004148BE /* GroupHistoryViewModel.swift in Sources */,
 				26B403262B865C3E00D98F08 /* HomeView.swift in Sources */,
 				26EF994A2A5078630096C3D5 /* NotificationManager.swift in Sources */,
 				262942162B976E7B00DBA853 /* EmptyResponse.swift in Sources */,
+				26010A052BA5BC4000BEF862 /* Array+.swift in Sources */,
 				2629420B2B9768C100DBA853 /* ApiRequestTemplate.swift in Sources */,
 				26B4032A2B888F9A00D98F08 /* GroupCreationView.swift in Sources */,
 				260FC35C2B88F6B7004148BE /* GroupEnteryViewModel.swift in Sources */,
@@ -378,11 +392,13 @@
 				260FC3582B88F69A004148BE /* GroupCreationViewModel.swift in Sources */,
 				26E664562BA496BA0098A61B /* PutGroupInfoRequest.swift in Sources */,
 				26D2CD6E2A4F243600187BA7 /* BestByDateAppApp.swift in Sources */,
+				26010A092BA5DCAE00BEF862 /* Binding+.swift in Sources */,
 				2694DB852B9DFA4500FC4ADE /* GetOneItemGroupInfoRequest.swift in Sources */,
 				26D2CD882A4F285300187BA7 /* BestByDateViewModel.swift in Sources */,
 				260FC35A2B88F6AC004148BE /* GroupDeleteViewModel.swift in Sources */,
 				2629421E2B97797500DBA853 /* BestByDateInfo.swift in Sources */,
 				262942132B976C2A00DBA853 /* ApiRequestPublisher.swift in Sources */,
+				26010A072BA5C17800BEF862 /* TapGestureWithEffect.swift in Sources */,
 				26D2CD862A4F276B00187BA7 /* BestByDateListView.swift in Sources */,
 				26B4032C2B88904300D98F08 /* GroupDeleteView.swift in Sources */,
 				2629420D2B97692D00DBA853 /* BaseUrlType.swift in Sources */,

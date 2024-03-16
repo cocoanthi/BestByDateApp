@@ -21,7 +21,7 @@ struct ProgressIndicator: View {
                     .cornerRadius(8)
                     .scaleEffect(1.2)
             }
-            .frame(width: .infinity, height: .infinity)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         } else {
             EmptyView()
         }
