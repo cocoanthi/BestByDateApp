@@ -3,426 +3,528 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		26010A032BA5BB7700BEF862 /* Collection+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26010A022BA5BB7700BEF862 /* Collection+.swift */; };
-		26010A052BA5BC4000BEF862 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26010A042BA5BC4000BEF862 /* Array+.swift */; };
-		26010A072BA5C17800BEF862 /* TapGestureWithEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26010A062BA5C17800BEF862 /* TapGestureWithEffect.swift */; };
-		26010A092BA5DCAE00BEF862 /* Binding+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26010A082BA5DCAE00BEF862 /* Binding+.swift */; };
-		260FC3582B88F69A004148BE /* GroupCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FC3572B88F69A004148BE /* GroupCreationViewModel.swift */; };
-		260FC35A2B88F6AC004148BE /* GroupDeleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FC3592B88F6AC004148BE /* GroupDeleteViewModel.swift */; };
-		260FC35C2B88F6B7004148BE /* GroupEnteryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FC35B2B88F6B7004148BE /* GroupEnteryViewModel.swift */; };
-		260FC35E2B88F6CB004148BE /* GroupHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FC35D2B88F6CB004148BE /* GroupHistoryViewModel.swift */; };
-		260FC3652B88FB4F004148BE /* BestByDateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FC3642B88FB4F004148BE /* BestByDateRepository.swift */; };
-		2629420B2B9768C100DBA853 /* ApiRequestTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2629420A2B9768C100DBA853 /* ApiRequestTemplate.swift */; };
-		2629420D2B97692D00DBA853 /* BaseUrlType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2629420C2B97692D00DBA853 /* BaseUrlType.swift */; };
-		2629420F2B97695400DBA853 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2629420E2B97695400DBA853 /* HttpMethod.swift */; };
-		262942112B97697B00DBA853 /* ApiRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262942102B97697B00DBA853 /* ApiRequestError.swift */; };
-		262942132B976C2A00DBA853 /* ApiRequestPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262942122B976C2A00DBA853 /* ApiRequestPublisher.swift */; };
-		262942162B976E7B00DBA853 /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262942152B976E7B00DBA853 /* EmptyResponse.swift */; };
-		2629421C2B9776A900DBA853 /* GetBestByDateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2629421B2B9776A900DBA853 /* GetBestByDateRequest.swift */; };
-		2629421E2B97797500DBA853 /* BestByDateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2629421D2B97797500DBA853 /* BestByDateInfo.swift */; };
-		265BDF802AF298F4007A6B9B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 265BDF7F2AF298F4007A6B9B /* Realm */; };
-		265BDF822AF298F4007A6B9B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 265BDF812AF298F4007A6B9B /* RealmSwift */; };
-		2694DB852B9DFA4500FC4ADE /* GetOneItemGroupInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694DB842B9DFA4500FC4ADE /* GetOneItemGroupInfoRequest.swift */; };
-		2694DB872B9DFB0500FC4ADE /* GroupInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694DB862B9DFB0500FC4ADE /* GroupInfoRepository.swift */; };
-		2694DB8A2B9DFBE300FC4ADE /* GroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694DB892B9DFBE300FC4ADE /* GroupInfo.swift */; };
-		2694DB8C2BA09E2500FC4ADE /* PutBestByDateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694DB8B2BA09E2500FC4ADE /* PutBestByDateRequest.swift */; };
-		2694DB8E2BA0AB7200FC4ADE /* DeleteBestByDateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694DB8D2BA0AB7200FC4ADE /* DeleteBestByDateRequest.swift */; };
-		2694DB902BA2014F00FC4ADE /* PostBestByDateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694DB8F2BA2014F00FC4ADE /* PostBestByDateRequest.swift */; };
-		26B403262B865C3E00D98F08 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B403252B865C3E00D98F08 /* HomeView.swift */; };
-		26B4032A2B888F9A00D98F08 /* GroupCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B403292B888F9A00D98F08 /* GroupCreationView.swift */; };
-		26B4032C2B88904300D98F08 /* GroupDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B4032B2B88904300D98F08 /* GroupDeleteView.swift */; };
-		26B4032E2B8890A200D98F08 /* GroupEnteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B4032D2B8890A200D98F08 /* GroupEnteryView.swift */; };
-		26B403302B8890C500D98F08 /* GroupHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B4032F2B8890C500D98F08 /* GroupHistoryView.swift */; };
-		26B403362B889EF000D98F08 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B403352B889EF000D98F08 /* CustomButton.swift */; };
-		26B403392B88E06000D98F08 /* CustomListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B403382B88E06000D98F08 /* CustomListRow.swift */; };
-		26D2CD6E2A4F243600187BA7 /* BestByDateAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2CD6D2A4F243600187BA7 /* BestByDateAppApp.swift */; };
-		26D2CD702A4F243600187BA7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2CD6F2A4F243600187BA7 /* ContentView.swift */; };
-		26D2CD722A4F243B00187BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26D2CD712A4F243B00187BA7 /* Assets.xcassets */; };
-		26D2CD752A4F243B00187BA7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26D2CD742A4F243B00187BA7 /* Preview Assets.xcassets */; };
-		26D2CD772A4F243B00187BA7 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2CD762A4F243B00187BA7 /* Persistence.swift */; };
-		26D2CD7A2A4F243B00187BA7 /* BestByDateApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26D2CD782A4F243B00187BA7 /* BestByDateApp.xcdatamodeld */; };
-		26D2CD842A4F254B00187BA7 /* BestByDateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2CD832A4F254B00187BA7 /* BestByDateItem.swift */; };
-		26D2CD862A4F276B00187BA7 /* BestByDateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2CD852A4F276B00187BA7 /* BestByDateListView.swift */; };
-		26D2CD882A4F285300187BA7 /* BestByDateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D2CD872A4F285300187BA7 /* BestByDateViewModel.swift */; };
-		26E664562BA496BA0098A61B /* PutGroupInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E664552BA496BA0098A61B /* PutGroupInfoRequest.swift */; };
-		26E6645A2BA56A740098A61B /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E664592BA56A740098A61B /* ProgressView.swift */; };
-		26EF99472A50703E0096C3D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EF99462A50703E0096C3D5 /* AppDelegate.swift */; };
-		26EF994A2A5078630096C3D5 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EF99492A5078630096C3D5 /* NotificationManager.swift */; };
+		05BAF984109CFB2B184EBF53 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9BB67EA15F570E0F48F0A1 /* HomeView.swift */; };
+		062DE57D4FC20D46CA3068B9 /* GroupDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44BE51CEBCC5B9C5C2E2837 /* GroupDeleteView.swift */; };
+		071FD81A914A3EC67F5A6817 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A38BE27A7C8761747EB400 /* Persistence.swift */; };
+		0BADDA4D4BE001BE72C9C68F /* BestByDateApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B2BE104901287EE3C3DD0A93 /* BestByDateApp.xcdatamodeld */; };
+		0D388F2A42BE94532C4AD9F2 /* GroupInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7822C7577C4182B8B9AA7BD6 /* GroupInfoRepository.swift */; };
+		0D8791A7C7A010650615FCCA /* BaseUrlType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA2C439A72CE5CB46896CC4 /* BaseUrlType.swift */; };
+		0FFC33892EE4B7804B1CE6D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08FFA607DD533DC0B46A4EAB /* Assets.xcassets */; };
+		12F83479BFA0E7F543FD7E1B /* GetOneItemGroupInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C109948E93B19DA6D7113EB /* GetOneItemGroupInfoRequest.swift */; };
+		171047646228D3B4ACBD3CDF /* GroupCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EC12AA2966185F777E8CD0 /* GroupCreationViewModel.swift */; };
+		1862C1E25A706E175AB182A1 /* BestByDateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB728890D96F2137EDA53B /* BestByDateItem.swift */; };
+		1C7DC9EA4B52360E7EE415E6 /* PostBestByDateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495BAFE0C4A374969144B076 /* PostBestByDateRequest.swift */; };
+		1F5DA9AF748BC3DF90097610 /* BestByDateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E514203378B2B63475297969 /* BestByDateInfo.swift */; };
+		23A925C7BAD1DA8419BA1E59 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37EFE8E79FDEFADEABE51E3 /* NotificationManager.swift */; };
+		26C485B710A10DF5BFA773F0 /* ApiRequestTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C09CBB3FCC14C72C2D0E4B0 /* ApiRequestTemplate.swift */; };
+		27EE11EA6E5D2BD63EE799A7 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDA03026275191E4FBE2703 /* Array+.swift */; };
+		2CBCBCAE8AD8F24047676BD3 /* TapGestureWithEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799E773FB9C832F953638D9 /* TapGestureWithEffect.swift */; };
+		2DE1FE7174FBA957A7B59E2B /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7532ED7EDD134763A18A083C /* EmptyResponse.swift */; };
+		2E734B585C2CDC4E03372D0D /* PutBestByDateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243C7DE4041A85C72F59FE9C /* PutBestByDateRequest.swift */; };
+		322A11D8DE78B0646498A6E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF039519E6C79E9CA9550EC0 /* Preview Assets.xcassets */; };
+		37F438482D7EAF95AC478E5B /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37EFE8E79FDEFADEABE51E3 /* NotificationManager.swift */; };
+		3ACB86F5DB332FA559279941 /* GetBestByDateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F3B641BBA01B1C5114A901 /* GetBestByDateRequest.swift */; };
+		3B7E78D63C7ED16B454603FD /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A38BE27A7C8761747EB400 /* Persistence.swift */; };
+		3CC3EC3830402E861301FBF4 /* GroupHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D72BA37BF0B5B14A4AE19 /* GroupHistoryView.swift */; };
+		3E2111361476A865FB642A35 /* GroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F47F7DB7E50DE61EA801A9 /* GroupInfo.swift */; };
+		420497DC93AE75CE2E35D62E /* GroupCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EC12AA2966185F777E8CD0 /* GroupCreationViewModel.swift */; };
+		424F7E0AE3E01FA1D2B28588 /* BaseUrlType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA2C439A72CE5CB46896CC4 /* BaseUrlType.swift */; };
+		4309D43C261EFE728951F3D1 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491678A6E428A0E3A38487B8 /* ProgressView.swift */; };
+		46756E32D9F48EDAC542CE8A /* GroupCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AB45C2CA07F526A66D2DE0 /* GroupCreationView.swift */; };
+		4883ABA1757ED398C4CD8403 /* BestByDateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E514203378B2B63475297969 /* BestByDateInfo.swift */; };
+		4894023E0B39C653492774E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB7B1D9B41F6B4B6ED5210 /* AppDelegate.swift */; };
+		4F2F37B1E3180A8F651C2739 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9BB67EA15F570E0F48F0A1 /* HomeView.swift */; };
+		50497B4EB0C9333454AA8733 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9049591C2F8F860BA5DA4205 /* CustomButton.swift */; };
+		570F12D25D34B8E368A29DBA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF039519E6C79E9CA9550EC0 /* Preview Assets.xcassets */; };
+		58C287683EF8A6C72652452E /* GroupCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AB45C2CA07F526A66D2DE0 /* GroupCreationView.swift */; };
+		5C7AC1D4038A0AD2DEFD9816 /* GroupEnteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CB05C6AD42AFDA40CFF27 /* GroupEnteryView.swift */; };
+		6107C79874E87A1B1A1E64ED /* ApiRequestPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976C7AB39EA50DCC9F746BFB /* ApiRequestPublisher.swift */; };
+		63CB4D3632FDD3899F8D4B60 /* BestByDateAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F290F9E0A785F136C73C8A4 /* BestByDateAppApp.swift */; };
+		6B2DB3B8591C28F408121D31 /* Binding+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F29ACCFDB2F993D670928 /* Binding+.swift */; };
+		6DD984E60D5B07E6771D869A /* BestByDateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15426D0673A7D08D6C6AC153 /* BestByDateRepository.swift */; };
+		74A3E4992F9D222DC888FECB /* BestByDateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD60748C640E540B2916B9C /* BestByDateListView.swift */; };
+		77BECEB2066A809D632F3541 /* BestByDateApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B2BE104901287EE3C3DD0A93 /* BestByDateApp.xcdatamodeld */; };
+		78DED17C6182DCB637C03B59 /* GroupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F47F7DB7E50DE61EA801A9 /* GroupInfo.swift */; };
+		7D03F2D98D1086C5B0C28959 /* Collection+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B10E9CBF5A7837A568FDF7 /* Collection+.swift */; };
+		7F482BE041D26389E725E5A0 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDA03026275191E4FBE2703 /* Array+.swift */; };
+		8065638B2C22EBEBB0B08E81 /* Collection+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B10E9CBF5A7837A568FDF7 /* Collection+.swift */; };
+		82E3E8F6C74115E073AF4C28 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491678A6E428A0E3A38487B8 /* ProgressView.swift */; };
+		851EED7B8C1E61B9D283E65D /* GroupHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7229EA2E583CB6BA3D36B26E /* GroupHistoryViewModel.swift */; };
+		8564DFD9823A4EFEA409B42E /* Binding+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F29ACCFDB2F993D670928 /* Binding+.swift */; };
+		8C8ECE466D73088DC870B119 /* CustomListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C59C627AB8643EA4A33E6 /* CustomListRow.swift */; };
+		8D536C70C4E1647262A0B05B /* CustomListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C59C627AB8643EA4A33E6 /* CustomListRow.swift */; };
+		8D831CCE287E9A94F2F97B77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08FFA607DD533DC0B46A4EAB /* Assets.xcassets */; };
+		8D84682245E8212732AFCADE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC764F746E8C802B8A1602F4 /* ContentView.swift */; };
+		8DDE29D3AF2105BDF8B44CE3 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9049591C2F8F860BA5DA4205 /* CustomButton.swift */; };
+		90688272CF5D59EF1AE27F5F /* GetBestByDateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F3B641BBA01B1C5114A901 /* GetBestByDateRequest.swift */; };
+		90ED1A2B6A320105B8BCA2F3 /* ApiRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E15780FC1307C668D489CAD /* ApiRequestError.swift */; };
+		920D1E8C978A81EFF017E125 /* BestByDateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A816F139A04D8FE5E3B3DE64 /* BestByDateViewModel.swift */; };
+		9291CD901475821792F30460 /* PutGroupInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5C5332A6344E205EFECF2E /* PutGroupInfoRequest.swift */; };
+		9360FADCEF4243F6CE7D589F /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB120F768D0B282CD991035 /* HttpMethod.swift */; };
+		93F99DE4158169A92EB1435C /* TapGestureWithEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799E773FB9C832F953638D9 /* TapGestureWithEffect.swift */; };
+		952310E944555E7541494754 /* GroupDeleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29570F8C2E90F6ADB5DBA607 /* GroupDeleteViewModel.swift */; };
+		98138FBD73E104697ACDC91B /* GroupHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D72BA37BF0B5B14A4AE19 /* GroupHistoryView.swift */; };
+		9FFD34001D326485A68B97AB /* PutBestByDateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243C7DE4041A85C72F59FE9C /* PutBestByDateRequest.swift */; };
+		B5D9E8739542470D4428FFAD /* DeleteBestByDateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFF9AFF226F0FA27FF6BA1B /* DeleteBestByDateRequest.swift */; };
+		BD271F57574102908FD1A4BB /* GroupDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44BE51CEBCC5B9C5C2E2837 /* GroupDeleteView.swift */; };
+		BF684FB91B12155110188A09 /* GroupEnteryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22265298A4AB0E30260CCA64 /* GroupEnteryViewModel.swift */; };
+		C12383199EE04421978BCBF3 /* GroupDeleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29570F8C2E90F6ADB5DBA607 /* GroupDeleteViewModel.swift */; };
+		C3AFD240BA4EB3294E0E7E17 /* GroupHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7229EA2E583CB6BA3D36B26E /* GroupHistoryViewModel.swift */; };
+		CAD70C7D9DAE33E2466638A8 /* ApiRequestTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C09CBB3FCC14C72C2D0E4B0 /* ApiRequestTemplate.swift */; };
+		D22AC80402E750983051C41D /* ApiRequestPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976C7AB39EA50DCC9F746BFB /* ApiRequestPublisher.swift */; };
+		D9364F57FFD3BF32C0C73A0D /* ApiRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E15780FC1307C668D489CAD /* ApiRequestError.swift */; };
+		DBF9B59DA96925E0D2F45EB3 /* PostBestByDateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495BAFE0C4A374969144B076 /* PostBestByDateRequest.swift */; };
+		DC6AEDB8685C7C154CE2C0F8 /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7532ED7EDD134763A18A083C /* EmptyResponse.swift */; };
+		DD5010936172968CD6BE1248 /* GroupInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7822C7577C4182B8B9AA7BD6 /* GroupInfoRepository.swift */; };
+		DF9BAFAA2E074B8660F6D14F /* DeleteBestByDateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFF9AFF226F0FA27FF6BA1B /* DeleteBestByDateRequest.swift */; };
+		E4F6035E68812D174C400B03 /* BestByDateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCB728890D96F2137EDA53B /* BestByDateItem.swift */; };
+		E69F3C48FE4530D391F8D5E2 /* GroupEnteryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22265298A4AB0E30260CCA64 /* GroupEnteryViewModel.swift */; };
+		E70C5C185523716371E6F238 /* PutGroupInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5C5332A6344E205EFECF2E /* PutGroupInfoRequest.swift */; };
+		ED584B5FADCA556FBC466741 /* BestByDateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD60748C640E540B2916B9C /* BestByDateListView.swift */; };
+		ED7A068C8C7F7E8F9B77FCD9 /* GetOneItemGroupInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C109948E93B19DA6D7113EB /* GetOneItemGroupInfoRequest.swift */; };
+		EFC0520685614810D9BDBC95 /* BestByDateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15426D0673A7D08D6C6AC153 /* BestByDateRepository.swift */; };
+		F045DB0D4BA9AE0B7F669465 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB7B1D9B41F6B4B6ED5210 /* AppDelegate.swift */; };
+		F5103EDCB68A45ACCC00C2D3 /* BestByDateAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F290F9E0A785F136C73C8A4 /* BestByDateAppApp.swift */; };
+		F54DDA44D1EA19C0EADF2D2B /* BestByDateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A816F139A04D8FE5E3B3DE64 /* BestByDateViewModel.swift */; };
+		F5AFC9284056376A71E4A164 /* GroupEnteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207CB05C6AD42AFDA40CFF27 /* GroupEnteryView.swift */; };
+		FC165587FB376D91A5561522 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC764F746E8C802B8A1602F4 /* ContentView.swift */; };
+		FFF9FFCE588A0930F2CEBDF6 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB120F768D0B282CD991035 /* HttpMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		26010A022BA5BB7700BEF862 /* Collection+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+.swift"; sourceTree = "<group>"; };
-		26010A042BA5BC4000BEF862 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
-		26010A062BA5C17800BEF862 /* TapGestureWithEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureWithEffect.swift; sourceTree = "<group>"; };
-		26010A082BA5DCAE00BEF862 /* Binding+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+.swift"; sourceTree = "<group>"; };
-		260FC3572B88F69A004148BE /* GroupCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCreationViewModel.swift; sourceTree = "<group>"; };
-		260FC3592B88F6AC004148BE /* GroupDeleteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDeleteViewModel.swift; sourceTree = "<group>"; };
-		260FC35B2B88F6B7004148BE /* GroupEnteryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupEnteryViewModel.swift; sourceTree = "<group>"; };
-		260FC35D2B88F6CB004148BE /* GroupHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupHistoryViewModel.swift; sourceTree = "<group>"; };
-		260FC3642B88FB4F004148BE /* BestByDateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateRepository.swift; sourceTree = "<group>"; };
-		2629420A2B9768C100DBA853 /* ApiRequestTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestTemplate.swift; sourceTree = "<group>"; };
-		2629420C2B97692D00DBA853 /* BaseUrlType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUrlType.swift; sourceTree = "<group>"; };
-		2629420E2B97695400DBA853 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
-		262942102B97697B00DBA853 /* ApiRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestError.swift; sourceTree = "<group>"; };
-		262942122B976C2A00DBA853 /* ApiRequestPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestPublisher.swift; sourceTree = "<group>"; };
-		262942152B976E7B00DBA853 /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
-		2629421B2B9776A900DBA853 /* GetBestByDateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetBestByDateRequest.swift; path = BestByDateApp/Domain/GetBestByDateRequest.swift; sourceTree = SOURCE_ROOT; };
-		2629421D2B97797500DBA853 /* BestByDateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateInfo.swift; sourceTree = "<group>"; };
-		2694DB842B9DFA4500FC4ADE /* GetOneItemGroupInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOneItemGroupInfoRequest.swift; sourceTree = "<group>"; };
-		2694DB862B9DFB0500FC4ADE /* GroupInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfoRepository.swift; sourceTree = "<group>"; };
-		2694DB892B9DFBE300FC4ADE /* GroupInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfo.swift; sourceTree = "<group>"; };
-		2694DB8B2BA09E2500FC4ADE /* PutBestByDateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutBestByDateRequest.swift; sourceTree = "<group>"; };
-		2694DB8D2BA0AB7200FC4ADE /* DeleteBestByDateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteBestByDateRequest.swift; sourceTree = "<group>"; };
-		2694DB8F2BA2014F00FC4ADE /* PostBestByDateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBestByDateRequest.swift; sourceTree = "<group>"; };
-		26B403252B865C3E00D98F08 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		26B403292B888F9A00D98F08 /* GroupCreationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCreationView.swift; sourceTree = "<group>"; };
-		26B4032B2B88904300D98F08 /* GroupDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDeleteView.swift; sourceTree = "<group>"; };
-		26B4032D2B8890A200D98F08 /* GroupEnteryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupEnteryView.swift; sourceTree = "<group>"; };
-		26B4032F2B8890C500D98F08 /* GroupHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupHistoryView.swift; sourceTree = "<group>"; };
-		26B403352B889EF000D98F08 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		26B403382B88E06000D98F08 /* CustomListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListRow.swift; sourceTree = "<group>"; };
-		26D2CD6A2A4F243600187BA7 /* BestByDateApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestByDateApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		26D2CD6D2A4F243600187BA7 /* BestByDateAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateAppApp.swift; sourceTree = "<group>"; };
-		26D2CD6F2A4F243600187BA7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		26D2CD712A4F243B00187BA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		26D2CD742A4F243B00187BA7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		26D2CD762A4F243B00187BA7 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		26D2CD792A4F243B00187BA7 /* BestByDateApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BestByDateApp.xcdatamodel; sourceTree = "<group>"; };
-		26D2CD832A4F254B00187BA7 /* BestByDateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateItem.swift; sourceTree = "<group>"; };
-		26D2CD852A4F276B00187BA7 /* BestByDateListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateListView.swift; sourceTree = "<group>"; };
-		26D2CD872A4F285300187BA7 /* BestByDateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateViewModel.swift; sourceTree = "<group>"; };
-		26E664552BA496BA0098A61B /* PutGroupInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutGroupInfoRequest.swift; sourceTree = "<group>"; };
-		26E664592BA56A740098A61B /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
-		26EF99462A50703E0096C3D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		26EF99492A5078630096C3D5 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		02F47F7DB7E50DE61EA801A9 /* GroupInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfo.swift; sourceTree = "<group>"; };
+		08FFA607DD533DC0B46A4EAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1025AB2B811150ED6A99AFDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		107F29ACCFDB2F993D670928 /* Binding+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+.swift"; sourceTree = "<group>"; };
+		15426D0673A7D08D6C6AC153 /* BestByDateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateRepository.swift; sourceTree = "<group>"; };
+		18CB7B1D9B41F6B4B6ED5210 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1C09CBB3FCC14C72C2D0E4B0 /* ApiRequestTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestTemplate.swift; sourceTree = "<group>"; };
+		1CD60748C640E540B2916B9C /* BestByDateListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateListView.swift; sourceTree = "<group>"; };
+		207CB05C6AD42AFDA40CFF27 /* GroupEnteryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupEnteryView.swift; sourceTree = "<group>"; };
+		22265298A4AB0E30260CCA64 /* GroupEnteryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupEnteryViewModel.swift; sourceTree = "<group>"; };
+		243C7DE4041A85C72F59FE9C /* PutBestByDateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutBestByDateRequest.swift; sourceTree = "<group>"; };
+		2799E773FB9C832F953638D9 /* TapGestureWithEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureWithEffect.swift; sourceTree = "<group>"; };
+		28AB45C2CA07F526A66D2DE0 /* GroupCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCreationView.swift; sourceTree = "<group>"; };
+		29570F8C2E90F6ADB5DBA607 /* GroupDeleteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDeleteViewModel.swift; sourceTree = "<group>"; };
+		3BDA03026275191E4FBE2703 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
+		3C6CD1CFF6DC57FB0CF04391 /* Debug.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Debug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E15780FC1307C668D489CAD /* ApiRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestError.swift; sourceTree = "<group>"; };
+		47B10E9CBF5A7837A568FDF7 /* Collection+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+.swift"; sourceTree = "<group>"; };
+		491678A6E428A0E3A38487B8 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		495BAFE0C4A374969144B076 /* PostBestByDateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBestByDateRequest.swift; sourceTree = "<group>"; };
+		4C9BB67EA15F570E0F48F0A1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4E0C59C627AB8643EA4A33E6 /* CustomListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListRow.swift; sourceTree = "<group>"; };
+		509D72BA37BF0B5B14A4AE19 /* GroupHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupHistoryView.swift; sourceTree = "<group>"; };
+		5C109948E93B19DA6D7113EB /* GetOneItemGroupInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOneItemGroupInfoRequest.swift; sourceTree = "<group>"; };
+		6BCB728890D96F2137EDA53B /* BestByDateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateItem.swift; sourceTree = "<group>"; };
+		7229EA2E583CB6BA3D36B26E /* GroupHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupHistoryViewModel.swift; sourceTree = "<group>"; };
+		7532ED7EDD134763A18A083C /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
+		7822C7577C4182B8B9AA7BD6 /* GroupInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfoRepository.swift; sourceTree = "<group>"; };
+		7F290F9E0A785F136C73C8A4 /* BestByDateAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateAppApp.swift; sourceTree = "<group>"; };
+		83F3B641BBA01B1C5114A901 /* GetBestByDateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBestByDateRequest.swift; sourceTree = "<group>"; };
+		8D5C5332A6344E205EFECF2E /* PutGroupInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutGroupInfoRequest.swift; sourceTree = "<group>"; };
+		9049591C2F8F860BA5DA4205 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		976C7AB39EA50DCC9F746BFB /* ApiRequestPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestPublisher.swift; sourceTree = "<group>"; };
+		9DFF9AFF226F0FA27FF6BA1B /* DeleteBestByDateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteBestByDateRequest.swift; sourceTree = "<group>"; };
+		A37EFE8E79FDEFADEABE51E3 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		A816F139A04D8FE5E3B3DE64 /* BestByDateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateViewModel.swift; sourceTree = "<group>"; };
+		B44BE51CEBCC5B9C5C2E2837 /* GroupDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDeleteView.swift; sourceTree = "<group>"; };
+		B6EC12AA2966185F777E8CD0 /* GroupCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCreationViewModel.swift; sourceTree = "<group>"; };
+		BC764F746E8C802B8A1602F4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DF039519E6C79E9CA9550EC0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E1A38BE27A7C8761747EB400 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		E514203378B2B63475297969 /* BestByDateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestByDateInfo.swift; sourceTree = "<group>"; };
+		E56FF53148EEF534C73A8477 /* Release.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Release.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE96D3EDB6821E95835855EC /* BestByDateApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BestByDateApp.xcdatamodel; sourceTree = "<group>"; };
+		EFB120F768D0B282CD991035 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		FFA2C439A72CE5CB46896CC4 /* BaseUrlType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUrlType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFrameworksBuildPhase section */
-		26D2CD672A4F243600187BA7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				265BDF822AF298F4007A6B9B /* RealmSwift in Frameworks */,
-				265BDF802AF298F4007A6B9B /* Realm in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
 /* Begin PBXGroup section */
-		260FC35F2B88F8F3004148BE /* Data */ = {
+		08A5C2205070ABE7BC505C7A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				262942072B9766C600DBA853 /* Repository */,
-				260FC3602B88F901004148BE /* Entity */,
+				A37EFE8E79FDEFADEABE51E3 /* NotificationManager.swift */,
 			);
-			path = Data;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		260FC3602B88F901004148BE /* Entity */ = {
+		0F5CE8D08BAD708B0A71B702 /* ApiTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				26D2CD832A4F254B00187BA7 /* BestByDateItem.swift */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		260FC3622B88F937004148BE /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				26D2CD822A4F251400187BA7 /* Model */,
-				26D2CD812A4F250700187BA7 /* ViewModel */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		260FC3632B88FA3B004148BE /* Contents */ = {
-			isa = PBXGroup;
-			children = (
-				26D2CD852A4F276B00187BA7 /* BestByDateListView.swift */,
-				26B403252B865C3E00D98F08 /* HomeView.swift */,
-				26B403292B888F9A00D98F08 /* GroupCreationView.swift */,
-				26B4032B2B88904300D98F08 /* GroupDeleteView.swift */,
-				26B4032D2B8890A200D98F08 /* GroupEnteryView.swift */,
-				26B4032F2B8890C500D98F08 /* GroupHistoryView.swift */,
-			);
-			path = Contents;
-			sourceTree = "<group>";
-		};
-		262942072B9766C600DBA853 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				262942122B976C2A00DBA853 /* ApiRequestPublisher.swift */,
-				2694DB882B9DFB1800FC4ADE /* GroupInfo */,
-				2629421A2B976F3A00DBA853 /* BestByDate */,
-				262942192B976F2600DBA853 /* ApiTemplate */,
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
-		262942192B976F2600DBA853 /* ApiTemplate */ = {
-			isa = PBXGroup;
-			children = (
-				262942152B976E7B00DBA853 /* EmptyResponse.swift */,
-				262942102B97697B00DBA853 /* ApiRequestError.swift */,
-				2629420A2B9768C100DBA853 /* ApiRequestTemplate.swift */,
-				2629420E2B97695400DBA853 /* HttpMethod.swift */,
-				2629420C2B97692D00DBA853 /* BaseUrlType.swift */,
+				3E15780FC1307C668D489CAD /* ApiRequestError.swift */,
+				1C09CBB3FCC14C72C2D0E4B0 /* ApiRequestTemplate.swift */,
+				FFA2C439A72CE5CB46896CC4 /* BaseUrlType.swift */,
+				7532ED7EDD134763A18A083C /* EmptyResponse.swift */,
+				EFB120F768D0B282CD991035 /* HttpMethod.swift */,
 			);
 			path = ApiTemplate;
 			sourceTree = "<group>";
 		};
-		2629421A2B976F3A00DBA853 /* BestByDate */ = {
+		16ED4316D817208F6B5F2EB8 /* BestByDateApp */ = {
 			isa = PBXGroup;
 			children = (
-				260FC3642B88FB4F004148BE /* BestByDateRepository.swift */,
-				2629421B2B9776A900DBA853 /* GetBestByDateRequest.swift */,
-				2629421D2B97797500DBA853 /* BestByDateInfo.swift */,
-				2694DB8B2BA09E2500FC4ADE /* PutBestByDateRequest.swift */,
-				2694DB8D2BA0AB7200FC4ADE /* DeleteBestByDateRequest.swift */,
-				2694DB8F2BA2014F00FC4ADE /* PostBestByDateRequest.swift */,
+				311EBB3D4474D9E5EE33093E /* Data */,
+				3D5A9F5091E0D1EEE78B11D5 /* Domain */,
+				F61FE2DC09595DDD6179E426 /* Extension */,
+				B13C1EA8D193134D3A0436B1 /* Preview Content */,
+				46733EAEE27EFF51192634C7 /* View */,
+				18CB7B1D9B41F6B4B6ED5210 /* AppDelegate.swift */,
+				08FFA607DD533DC0B46A4EAB /* Assets.xcassets */,
+				B2BE104901287EE3C3DD0A93 /* BestByDateApp.xcdatamodeld */,
+				1025AB2B811150ED6A99AFDF /* Info.plist */,
+				E1A38BE27A7C8761747EB400 /* Persistence.swift */,
 			);
-			path = BestByDate;
+			name = BestByDateApp;
+			path = BestByDateApp;
 			sourceTree = "<group>";
 		};
-		2694DB882B9DFB1800FC4ADE /* GroupInfo */ = {
+		2C4E6D50A48DF63C6DED1F17 /* GroupInfo */ = {
 			isa = PBXGroup;
 			children = (
-				2694DB842B9DFA4500FC4ADE /* GetOneItemGroupInfoRequest.swift */,
-				2694DB862B9DFB0500FC4ADE /* GroupInfoRepository.swift */,
-				2694DB892B9DFBE300FC4ADE /* GroupInfo.swift */,
-				26E664552BA496BA0098A61B /* PutGroupInfoRequest.swift */,
+				5C109948E93B19DA6D7113EB /* GetOneItemGroupInfoRequest.swift */,
+				02F47F7DB7E50DE61EA801A9 /* GroupInfo.swift */,
+				7822C7577C4182B8B9AA7BD6 /* GroupInfoRepository.swift */,
+				8D5C5332A6344E205EFECF2E /* PutGroupInfoRequest.swift */,
 			);
 			path = GroupInfo;
 			sourceTree = "<group>";
 		};
-		26B403312B889CB100D98F08 /* Extension */ = {
+		311EBB3D4474D9E5EE33093E /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				26010A022BA5BB7700BEF862 /* Collection+.swift */,
-				26010A042BA5BC4000BEF862 /* Array+.swift */,
-				26010A082BA5DCAE00BEF862 /* Binding+.swift */,
+				603C6FE1A32891DE726F024D /* Entity */,
+				E46AF06C4620D70606B8C509 /* Repository */,
 			);
-			path = Extension;
+			path = Data;
 			sourceTree = "<group>";
 		};
-		26B4033A2B88E13800D98F08 /* Common */ = {
+		3D5A9F5091E0D1EEE78B11D5 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				26E664592BA56A740098A61B /* ProgressView.swift */,
-				26B403382B88E06000D98F08 /* CustomListRow.swift */,
-				26B403352B889EF000D98F08 /* CustomButton.swift */,
-				26010A062BA5C17800BEF862 /* TapGestureWithEffect.swift */,
+				08A5C2205070ABE7BC505C7A /* Model */,
+				72920AED4E4D260C01752601 /* ViewModel */,
+				83F3B641BBA01B1C5114A901 /* GetBestByDateRequest.swift */,
 			);
-			path = Common;
+			path = Domain;
 			sourceTree = "<group>";
 		};
-		26D2CD612A4F243600187BA7 = {
+		46733EAEE27EFF51192634C7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				26D2CD6C2A4F243600187BA7 /* BestByDateApp */,
-				26D2CD6B2A4F243600187BA7 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		26D2CD6B2A4F243600187BA7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				26D2CD6A2A4F243600187BA7 /* BestByDateApp.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		26D2CD6C2A4F243600187BA7 /* BestByDateApp */ = {
-			isa = PBXGroup;
-			children = (
-				26D2CD802A4F24FB00187BA7 /* View */,
-				260FC3622B88F937004148BE /* Domain */,
-				260FC35F2B88F8F3004148BE /* Data */,
-				26B403312B889CB100D98F08 /* Extension */,
-				26D2CD712A4F243B00187BA7 /* Assets.xcassets */,
-				26D2CD762A4F243B00187BA7 /* Persistence.swift */,
-				26D2CD782A4F243B00187BA7 /* BestByDateApp.xcdatamodeld */,
-				26D2CD732A4F243B00187BA7 /* Preview Content */,
-				26EF99462A50703E0096C3D5 /* AppDelegate.swift */,
-			);
-			path = BestByDateApp;
-			sourceTree = "<group>";
-		};
-		26D2CD732A4F243B00187BA7 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				26D2CD742A4F243B00187BA7 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		26D2CD802A4F24FB00187BA7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				26B4033A2B88E13800D98F08 /* Common */,
-				260FC3632B88FA3B004148BE /* Contents */,
-				26D2CD6D2A4F243600187BA7 /* BestByDateAppApp.swift */,
-				26D2CD6F2A4F243600187BA7 /* ContentView.swift */,
+				D2843D8E1B8A8DA1DB3549C6 /* Common */,
+				7879315AFEADA8E59452DFCC /* Contents */,
+				7F290F9E0A785F136C73C8A4 /* BestByDateAppApp.swift */,
+				BC764F746E8C802B8A1602F4 /* ContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		26D2CD812A4F250700187BA7 /* ViewModel */ = {
+		603C6FE1A32891DE726F024D /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				26D2CD872A4F285300187BA7 /* BestByDateViewModel.swift */,
-				260FC3572B88F69A004148BE /* GroupCreationViewModel.swift */,
-				260FC3592B88F6AC004148BE /* GroupDeleteViewModel.swift */,
-				260FC35B2B88F6B7004148BE /* GroupEnteryViewModel.swift */,
-				260FC35D2B88F6CB004148BE /* GroupHistoryViewModel.swift */,
+				6BCB728890D96F2137EDA53B /* BestByDateItem.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		6F4346DB42F072A51048B9AC /* BestByDate */ = {
+			isa = PBXGroup;
+			children = (
+				E514203378B2B63475297969 /* BestByDateInfo.swift */,
+				15426D0673A7D08D6C6AC153 /* BestByDateRepository.swift */,
+				9DFF9AFF226F0FA27FF6BA1B /* DeleteBestByDateRequest.swift */,
+				495BAFE0C4A374969144B076 /* PostBestByDateRequest.swift */,
+				243C7DE4041A85C72F59FE9C /* PutBestByDateRequest.swift */,
+			);
+			path = BestByDate;
+			sourceTree = "<group>";
+		};
+		72920AED4E4D260C01752601 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A816F139A04D8FE5E3B3DE64 /* BestByDateViewModel.swift */,
+				B6EC12AA2966185F777E8CD0 /* GroupCreationViewModel.swift */,
+				29570F8C2E90F6ADB5DBA607 /* GroupDeleteViewModel.swift */,
+				22265298A4AB0E30260CCA64 /* GroupEnteryViewModel.swift */,
+				7229EA2E583CB6BA3D36B26E /* GroupHistoryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		26D2CD822A4F251400187BA7 /* Model */ = {
+		7879315AFEADA8E59452DFCC /* Contents */ = {
 			isa = PBXGroup;
 			children = (
-				26EF99492A5078630096C3D5 /* NotificationManager.swift */,
+				1CD60748C640E540B2916B9C /* BestByDateListView.swift */,
+				28AB45C2CA07F526A66D2DE0 /* GroupCreationView.swift */,
+				B44BE51CEBCC5B9C5C2E2837 /* GroupDeleteView.swift */,
+				207CB05C6AD42AFDA40CFF27 /* GroupEnteryView.swift */,
+				509D72BA37BF0B5B14A4AE19 /* GroupHistoryView.swift */,
+				4C9BB67EA15F570E0F48F0A1 /* HomeView.swift */,
 			);
-			path = Model;
+			path = Contents;
+			sourceTree = "<group>";
+		};
+		9D4FF6C1D8EC20AA004AA637 = {
+			isa = PBXGroup;
+			children = (
+				16ED4316D817208F6B5F2EB8 /* BestByDateApp */,
+				A000056A49DAD5C225AB4900 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A000056A49DAD5C225AB4900 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C6CD1CFF6DC57FB0CF04391 /* Debug.app */,
+				E56FF53148EEF534C73A8477 /* Release.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B13C1EA8D193134D3A0436B1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DF039519E6C79E9CA9550EC0 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D2843D8E1B8A8DA1DB3549C6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9049591C2F8F860BA5DA4205 /* CustomButton.swift */,
+				4E0C59C627AB8643EA4A33E6 /* CustomListRow.swift */,
+				491678A6E428A0E3A38487B8 /* ProgressView.swift */,
+				2799E773FB9C832F953638D9 /* TapGestureWithEffect.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E46AF06C4620D70606B8C509 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				0F5CE8D08BAD708B0A71B702 /* ApiTemplate */,
+				6F4346DB42F072A51048B9AC /* BestByDate */,
+				2C4E6D50A48DF63C6DED1F17 /* GroupInfo */,
+				976C7AB39EA50DCC9F746BFB /* ApiRequestPublisher.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		F61FE2DC09595DDD6179E426 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3BDA03026275191E4FBE2703 /* Array+.swift */,
+				107F29ACCFDB2F993D670928 /* Binding+.swift */,
+				47B10E9CBF5A7837A568FDF7 /* Collection+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		26D2CD692A4F243600187BA7 /* BestByDateApp */ = {
+		885BEDAF048C52DB56AA7FB1 /* Debug */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 26D2CD7D2A4F243B00187BA7 /* Build configuration list for PBXNativeTarget "BestByDateApp" */;
+			buildConfigurationList = 721D1A421AC1D253E049CB43 /* Build configuration list for PBXNativeTarget "Debug" */;
 			buildPhases = (
-				26D2CD662A4F243600187BA7 /* Sources */,
-				26D2CD672A4F243600187BA7 /* Frameworks */,
-				26D2CD682A4F243600187BA7 /* Resources */,
+				873933FDE35B0D911553ACCA /* Sources */,
+				8FFCAF68A0FF4A0A06CBCD2A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = BestByDateApp;
-			packageProductDependencies = (
-				265BDF7F2AF298F4007A6B9B /* Realm */,
-				265BDF812AF298F4007A6B9B /* RealmSwift */,
+			name = Debug;
+			productName = Debug;
+			productReference = 3C6CD1CFF6DC57FB0CF04391 /* Debug.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DBAD2BAF3FB2DBD0EB3A086E /* Release */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE73D6DB4B0CE9AA7471C35B /* Build configuration list for PBXNativeTarget "Release" */;
+			buildPhases = (
+				64EE05C72088815923B846C7 /* Sources */,
+				439E683C640E605A76D2111E /* Resources */,
 			);
-			productName = BestByDateApp;
-			productReference = 26D2CD6A2A4F243600187BA7 /* BestByDateApp.app */;
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Release;
+			productName = Release;
+			productReference = E56FF53148EEF534C73A8477 /* Release.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		26D2CD622A4F243600187BA7 /* Project object */ = {
+		9B7F485888F5BD776412925B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1340;
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					26D2CD692A4F243600187BA7 = {
-						CreatedOnToolsVersion = 13.4.1;
+					DBAD2BAF3FB2DBD0EB3A086E = {
+						DevelopmentTeam = 937YVNJH2A;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
-			buildConfigurationList = 26D2CD652A4F243600187BA7 /* Build configuration list for PBXProject "BestByDateApp" */;
-			compatibilityVersion = "Xcode 13.0";
-			developmentRegion = en;
+			buildConfigurationList = 78FB3FDABDF22A103EAC1DD9 /* Build configuration list for PBXProject "BestByDateApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = ja;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				ja,
 			);
-			mainGroup = 26D2CD612A4F243600187BA7;
-			packageReferences = (
-				265BDF7E2AF298F4007A6B9B /* XCRemoteSwiftPackageReference "realm-swift" */,
-			);
-			productRefGroup = 26D2CD6B2A4F243600187BA7 /* Products */;
+			mainGroup = 9D4FF6C1D8EC20AA004AA637;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				26D2CD692A4F243600187BA7 /* BestByDateApp */,
+				885BEDAF048C52DB56AA7FB1 /* Debug */,
+				DBAD2BAF3FB2DBD0EB3A086E /* Release */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		26D2CD682A4F243600187BA7 /* Resources */ = {
+		439E683C640E605A76D2111E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26D2CD752A4F243B00187BA7 /* Preview Assets.xcassets in Resources */,
-				26D2CD722A4F243B00187BA7 /* Assets.xcassets in Resources */,
+				8D831CCE287E9A94F2F97B77 /* Assets.xcassets in Resources */,
+				322A11D8DE78B0646498A6E7 /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FFCAF68A0FF4A0A06CBCD2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FFC33892EE4B7804B1CE6D8 /* Assets.xcassets in Resources */,
+				570F12D25D34B8E368A29DBA /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		26D2CD662A4F243600187BA7 /* Sources */ = {
+		64EE05C72088815923B846C7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26B4032E2B8890A200D98F08 /* GroupEnteryView.swift in Sources */,
-				2629421C2B9776A900DBA853 /* GetBestByDateRequest.swift in Sources */,
-				26B403302B8890C500D98F08 /* GroupHistoryView.swift in Sources */,
-				2694DB8A2B9DFBE300FC4ADE /* GroupInfo.swift in Sources */,
-				26EF99472A50703E0096C3D5 /* AppDelegate.swift in Sources */,
-				26D2CD842A4F254B00187BA7 /* BestByDateItem.swift in Sources */,
-				2694DB8C2BA09E2500FC4ADE /* PutBestByDateRequest.swift in Sources */,
-				26010A032BA5BB7700BEF862 /* Collection+.swift in Sources */,
-				26D2CD772A4F243B00187BA7 /* Persistence.swift in Sources */,
-				260FC35E2B88F6CB004148BE /* GroupHistoryViewModel.swift in Sources */,
-				26B403262B865C3E00D98F08 /* HomeView.swift in Sources */,
-				26EF994A2A5078630096C3D5 /* NotificationManager.swift in Sources */,
-				262942162B976E7B00DBA853 /* EmptyResponse.swift in Sources */,
-				26010A052BA5BC4000BEF862 /* Array+.swift in Sources */,
-				2629420B2B9768C100DBA853 /* ApiRequestTemplate.swift in Sources */,
-				26B4032A2B888F9A00D98F08 /* GroupCreationView.swift in Sources */,
-				260FC35C2B88F6B7004148BE /* GroupEnteryViewModel.swift in Sources */,
-				26D2CD702A4F243600187BA7 /* ContentView.swift in Sources */,
-				262942112B97697B00DBA853 /* ApiRequestError.swift in Sources */,
-				26D2CD7A2A4F243B00187BA7 /* BestByDateApp.xcdatamodeld in Sources */,
-				260FC3582B88F69A004148BE /* GroupCreationViewModel.swift in Sources */,
-				26E664562BA496BA0098A61B /* PutGroupInfoRequest.swift in Sources */,
-				26D2CD6E2A4F243600187BA7 /* BestByDateAppApp.swift in Sources */,
-				26010A092BA5DCAE00BEF862 /* Binding+.swift in Sources */,
-				2694DB852B9DFA4500FC4ADE /* GetOneItemGroupInfoRequest.swift in Sources */,
-				26D2CD882A4F285300187BA7 /* BestByDateViewModel.swift in Sources */,
-				260FC35A2B88F6AC004148BE /* GroupDeleteViewModel.swift in Sources */,
-				2629421E2B97797500DBA853 /* BestByDateInfo.swift in Sources */,
-				262942132B976C2A00DBA853 /* ApiRequestPublisher.swift in Sources */,
-				26010A072BA5C17800BEF862 /* TapGestureWithEffect.swift in Sources */,
-				26D2CD862A4F276B00187BA7 /* BestByDateListView.swift in Sources */,
-				26B4032C2B88904300D98F08 /* GroupDeleteView.swift in Sources */,
-				2629420D2B97692D00DBA853 /* BaseUrlType.swift in Sources */,
-				2694DB902BA2014F00FC4ADE /* PostBestByDateRequest.swift in Sources */,
-				260FC3652B88FB4F004148BE /* BestByDateRepository.swift in Sources */,
-				2629420F2B97695400DBA853 /* HttpMethod.swift in Sources */,
-				26B403392B88E06000D98F08 /* CustomListRow.swift in Sources */,
-				26B403362B889EF000D98F08 /* CustomButton.swift in Sources */,
-				26E6645A2BA56A740098A61B /* ProgressView.swift in Sources */,
-				2694DB872B9DFB0500FC4ADE /* GroupInfoRepository.swift in Sources */,
-				2694DB8E2BA0AB7200FC4ADE /* DeleteBestByDateRequest.swift in Sources */,
+				D9364F57FFD3BF32C0C73A0D /* ApiRequestError.swift in Sources */,
+				6107C79874E87A1B1A1E64ED /* ApiRequestPublisher.swift in Sources */,
+				CAD70C7D9DAE33E2466638A8 /* ApiRequestTemplate.swift in Sources */,
+				4894023E0B39C653492774E3 /* AppDelegate.swift in Sources */,
+				7F482BE041D26389E725E5A0 /* Array+.swift in Sources */,
+				0D8791A7C7A010650615FCCA /* BaseUrlType.swift in Sources */,
+				0BADDA4D4BE001BE72C9C68F /* BestByDateApp.xcdatamodeld in Sources */,
+				F5103EDCB68A45ACCC00C2D3 /* BestByDateAppApp.swift in Sources */,
+				4883ABA1757ED398C4CD8403 /* BestByDateInfo.swift in Sources */,
+				1862C1E25A706E175AB182A1 /* BestByDateItem.swift in Sources */,
+				ED584B5FADCA556FBC466741 /* BestByDateListView.swift in Sources */,
+				EFC0520685614810D9BDBC95 /* BestByDateRepository.swift in Sources */,
+				920D1E8C978A81EFF017E125 /* BestByDateViewModel.swift in Sources */,
+				6B2DB3B8591C28F408121D31 /* Binding+.swift in Sources */,
+				7D03F2D98D1086C5B0C28959 /* Collection+.swift in Sources */,
+				8D84682245E8212732AFCADE /* ContentView.swift in Sources */,
+				8DDE29D3AF2105BDF8B44CE3 /* CustomButton.swift in Sources */,
+				8D536C70C4E1647262A0B05B /* CustomListRow.swift in Sources */,
+				DF9BAFAA2E074B8660F6D14F /* DeleteBestByDateRequest.swift in Sources */,
+				2DE1FE7174FBA957A7B59E2B /* EmptyResponse.swift in Sources */,
+				3ACB86F5DB332FA559279941 /* GetBestByDateRequest.swift in Sources */,
+				ED7A068C8C7F7E8F9B77FCD9 /* GetOneItemGroupInfoRequest.swift in Sources */,
+				46756E32D9F48EDAC542CE8A /* GroupCreationView.swift in Sources */,
+				171047646228D3B4ACBD3CDF /* GroupCreationViewModel.swift in Sources */,
+				BD271F57574102908FD1A4BB /* GroupDeleteView.swift in Sources */,
+				C12383199EE04421978BCBF3 /* GroupDeleteViewModel.swift in Sources */,
+				F5AFC9284056376A71E4A164 /* GroupEnteryView.swift in Sources */,
+				E69F3C48FE4530D391F8D5E2 /* GroupEnteryViewModel.swift in Sources */,
+				98138FBD73E104697ACDC91B /* GroupHistoryView.swift in Sources */,
+				851EED7B8C1E61B9D283E65D /* GroupHistoryViewModel.swift in Sources */,
+				78DED17C6182DCB637C03B59 /* GroupInfo.swift in Sources */,
+				DD5010936172968CD6BE1248 /* GroupInfoRepository.swift in Sources */,
+				4F2F37B1E3180A8F651C2739 /* HomeView.swift in Sources */,
+				9360FADCEF4243F6CE7D589F /* HttpMethod.swift in Sources */,
+				37F438482D7EAF95AC478E5B /* NotificationManager.swift in Sources */,
+				071FD81A914A3EC67F5A6817 /* Persistence.swift in Sources */,
+				DBF9B59DA96925E0D2F45EB3 /* PostBestByDateRequest.swift in Sources */,
+				82E3E8F6C74115E073AF4C28 /* ProgressView.swift in Sources */,
+				2E734B585C2CDC4E03372D0D /* PutBestByDateRequest.swift in Sources */,
+				E70C5C185523716371E6F238 /* PutGroupInfoRequest.swift in Sources */,
+				2CBCBCAE8AD8F24047676BD3 /* TapGestureWithEffect.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		873933FDE35B0D911553ACCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90ED1A2B6A320105B8BCA2F3 /* ApiRequestError.swift in Sources */,
+				D22AC80402E750983051C41D /* ApiRequestPublisher.swift in Sources */,
+				26C485B710A10DF5BFA773F0 /* ApiRequestTemplate.swift in Sources */,
+				F045DB0D4BA9AE0B7F669465 /* AppDelegate.swift in Sources */,
+				27EE11EA6E5D2BD63EE799A7 /* Array+.swift in Sources */,
+				424F7E0AE3E01FA1D2B28588 /* BaseUrlType.swift in Sources */,
+				77BECEB2066A809D632F3541 /* BestByDateApp.xcdatamodeld in Sources */,
+				63CB4D3632FDD3899F8D4B60 /* BestByDateAppApp.swift in Sources */,
+				1F5DA9AF748BC3DF90097610 /* BestByDateInfo.swift in Sources */,
+				E4F6035E68812D174C400B03 /* BestByDateItem.swift in Sources */,
+				74A3E4992F9D222DC888FECB /* BestByDateListView.swift in Sources */,
+				6DD984E60D5B07E6771D869A /* BestByDateRepository.swift in Sources */,
+				F54DDA44D1EA19C0EADF2D2B /* BestByDateViewModel.swift in Sources */,
+				8564DFD9823A4EFEA409B42E /* Binding+.swift in Sources */,
+				8065638B2C22EBEBB0B08E81 /* Collection+.swift in Sources */,
+				FC165587FB376D91A5561522 /* ContentView.swift in Sources */,
+				50497B4EB0C9333454AA8733 /* CustomButton.swift in Sources */,
+				8C8ECE466D73088DC870B119 /* CustomListRow.swift in Sources */,
+				B5D9E8739542470D4428FFAD /* DeleteBestByDateRequest.swift in Sources */,
+				DC6AEDB8685C7C154CE2C0F8 /* EmptyResponse.swift in Sources */,
+				90688272CF5D59EF1AE27F5F /* GetBestByDateRequest.swift in Sources */,
+				12F83479BFA0E7F543FD7E1B /* GetOneItemGroupInfoRequest.swift in Sources */,
+				58C287683EF8A6C72652452E /* GroupCreationView.swift in Sources */,
+				420497DC93AE75CE2E35D62E /* GroupCreationViewModel.swift in Sources */,
+				062DE57D4FC20D46CA3068B9 /* GroupDeleteView.swift in Sources */,
+				952310E944555E7541494754 /* GroupDeleteViewModel.swift in Sources */,
+				5C7AC1D4038A0AD2DEFD9816 /* GroupEnteryView.swift in Sources */,
+				BF684FB91B12155110188A09 /* GroupEnteryViewModel.swift in Sources */,
+				3CC3EC3830402E861301FBF4 /* GroupHistoryView.swift in Sources */,
+				C3AFD240BA4EB3294E0E7E17 /* GroupHistoryViewModel.swift in Sources */,
+				3E2111361476A865FB642A35 /* GroupInfo.swift in Sources */,
+				0D388F2A42BE94532C4AD9F2 /* GroupInfoRepository.swift in Sources */,
+				05BAF984109CFB2B184EBF53 /* HomeView.swift in Sources */,
+				FFF9FFCE588A0930F2CEBDF6 /* HttpMethod.swift in Sources */,
+				23A925C7BAD1DA8419BA1E59 /* NotificationManager.swift in Sources */,
+				3B7E78D63C7ED16B454603FD /* Persistence.swift in Sources */,
+				1C7DC9EA4B52360E7EE415E6 /* PostBestByDateRequest.swift in Sources */,
+				4309D43C261EFE728951F3D1 /* ProgressView.swift in Sources */,
+				9FFD34001D326485A68B97AB /* PutBestByDateRequest.swift in Sources */,
+				9291CD901475821792F30460 /* PutGroupInfoRequest.swift in Sources */,
+				93F99DE4158169A92EB1435C /* TapGestureWithEffect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		26D2CD7B2A4F243B00187BA7 /* Debug */ = {
+		07D4BB6B33A0A37115DCE16E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_BUILD_VERSION = 1;
+				BUNDLE_VERSION = 1;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -457,8 +559,8 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
 					"$(inherited)",
+					"DEBUG=1",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -470,19 +572,120 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSION_CODE = 0;
 			};
 			name = Debug;
 		};
-		26D2CD7C2A4F243B00187BA7 /* Release */ = {
+		3BE2BCE274ED28EA5363315C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUNDLE_DISPLAY_NAME = "DeadlineNotifier Dev";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Auto;
+				DEVELOPMENT_ASSET_PATHS = "\"BestByDateApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 937YVNJH2A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = BestByDateApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.deadlinenotifier.dev;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = YES;
+			};
+			name = Debug;
+		};
+		6B65E0CAB642687761645ADC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUNDLE_DISPLAY_NAME = DeadlineNotifier;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_ASSET_PATHS = "\"BestByDateApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 937YVNJH2A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = BestByDateApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "$(inherited) $(OTHER_LDFLAGS) -ObjC";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = YES;
+			};
+			name = Debug;
+		};
+		6E264294E1701FADA2A40D23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUNDLE_DISPLAY_NAME = DeadlineNotifier;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_ASSET_PATHS = "\"BestByDateApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 937YVNJH2A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = BestByDateApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "$(inherited) $(OTHER_LDFLAGS) -ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.deadlinenotifier;
+				PROVISIONING_PROFILE_SPECIFIER = DeadlineNotifier;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = YES;
+			};
+			name = Release;
+		};
+		755FE6EE222FC124B48F1FBC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_BUILD_VERSION = 1;
+				BUNDLE_VERSION = 1;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -523,130 +726,88 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				VALIDATE_PRODUCT = YES;
+				SWIFT_VERSION = 5.0;
+				VERSION_CODE = 0;
 			};
 			name = Release;
 		};
-		26D2CD7E2A4F243B00187BA7 /* Debug */ = {
+		95A21A81FBDCDDC7FFD05FB6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				BUNDLE_DISPLAY_NAME = "DeadlineNotifier Dev";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_ASSET_PATHS = "\"BestByDateApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 937YVNJH2A;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = BestByDateApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Yaguchi.BestByDateApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		26D2CD7F2A4F243B00187BA7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BestByDateApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 937YVNJH2A;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Yaguchi.BestByDateApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		26D2CD652A4F243600187BA7 /* Build configuration list for PBXProject "BestByDateApp" */ = {
+		721D1A421AC1D253E049CB43 /* Build configuration list for PBXNativeTarget "Debug" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				26D2CD7B2A4F243B00187BA7 /* Debug */,
-				26D2CD7C2A4F243B00187BA7 /* Release */,
+				3BE2BCE274ED28EA5363315C /* Debug */,
+				95A21A81FBDCDDC7FFD05FB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		26D2CD7D2A4F243B00187BA7 /* Build configuration list for PBXNativeTarget "BestByDateApp" */ = {
+		78FB3FDABDF22A103EAC1DD9 /* Build configuration list for PBXProject "BestByDateApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				26D2CD7E2A4F243B00187BA7 /* Debug */,
-				26D2CD7F2A4F243B00187BA7 /* Release */,
+				07D4BB6B33A0A37115DCE16E /* Debug */,
+				755FE6EE222FC124B48F1FBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
+		};
+		AE73D6DB4B0CE9AA7471C35B /* Build configuration list for PBXNativeTarget "Release" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B65E0CAB642687761645ADC /* Debug */,
+				6E264294E1701FADA2A40D23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		265BDF7E2AF298F4007A6B9B /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.44.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		265BDF7F2AF298F4007A6B9B /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 265BDF7E2AF298F4007A6B9B /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		265BDF812AF298F4007A6B9B /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 265BDF7E2AF298F4007A6B9B /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
-
 /* Begin XCVersionGroup section */
-		26D2CD782A4F243B00187BA7 /* BestByDateApp.xcdatamodeld */ = {
+		B2BE104901287EE3C3DD0A93 /* BestByDateApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				26D2CD792A4F243B00187BA7 /* BestByDateApp.xcdatamodel */,
+				EE96D3EDB6821E95835855EC /* BestByDateApp.xcdatamodel */,
 			);
-			currentVersion = 26D2CD792A4F243B00187BA7 /* BestByDateApp.xcdatamodel */;
+			currentVersion = EE96D3EDB6821E95835855EC /* BestByDateApp.xcdatamodel */;
 			path = BestByDateApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = 26D2CD622A4F243600187BA7 /* Project object */;
+	rootObject = 9B7F485888F5BD776412925B /* Project object */;
 }
