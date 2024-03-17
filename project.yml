@@ -1,0 +1,218 @@
+# 本ファイルに登場するキー(VERSION_CODEなど)は、以下の方法で確認可能です. 多いので本ファイルでの説明は割愛します
+# https://developer.dip-net.co.jp/entry/2020/03/27/XCodeGen%E5%AF%BE%E5%BF%9C%E3%81%AETIPS
+
+# 反映させる場合はプロジェクトのルートで"xcodegen generate"コマンドを叩く. mintを使用している場合は前に"mint run xcodegen"をつける
+
+# プロジェクト名
+name: BestByDateApp
+# XcodeでいうPROJECTの"Build Settings"の部分
+settings:
+  BUNDLE_BUILD_VERSION: 1
+  BUNDLE_VERSION: 1
+  VERSION_CODE: 0
+  
+# PBXProjectファイルの設定.あまり使われることはない
+#attributes:
+#  LastSwiftUpdateCheck: '1250'
+#  LastUpgradeCheck: '1250'
+
+# オプション要素を設定できる.できる設定は以下参照
+# https://github.com/yonaskolb/XcodeGen/blob/master/Docs/ProjectSpec.md#options
+options:
+  # 最小OSのターゲット設定
+  deploymentTarget:
+    iOS: 16.0
+  # グループのソート順. グループとはおそらく以下のこと
+  # https://github.com/yonaskolb/XcodeGen/blob/master/Docs/ProjectSpec.md#groupOrdering
+  groupSortPosition: top
+  # プロジェクトの開発言語. defaultはen
+  developmentLanguage: ja
+  
+# "Build Configration"の設定
+configs:
+  Debug: debug
+  Release: release
+
+# SwiftPM設定. SPMを使用する場合は以下に記載
+#packages:
+#  Firebase:
+#    url: https://github.com/firebase/firebase-ios-sdk.git
+#    majorVersion: 10.11.0
+
+# 名前でマップされたプロジェクト内ターゲットリスト. Xcodeでいう"TARGETS"
+targets:
+  Debug:
+    # 参照されるターゲットテンプレートのリスト. targetTemplatesで設定したものをベースとして取り込むことができたりする
+    templates:
+      - Base
+      
+    # "Build Configration"の設定. こちらは使用するconfigのみを設定
+    configs:
+      Debug: debug
+      
+    # 依存関係の設定
+      # target: name - 別のターゲットへのリンク. 別のプロジェクト内のターゲットを指定できる
+      # framework: path - フレームワークまたは XCFramework へのリンク
+      # carthage: name - Carthage フレームワーク (XCFramework ではない) にリンクするためのヘルパー
+      # sdk: name - SDK との依存関係を設定. フレームワーク (.framework) または lib (.tbd) を参照する
+      # package: name - Swift パッケージへのリンク。名前はパッケージで定義されたパッケージの名前と一致する必要がある
+      # bundle: name - 指定された名前の事前ビルドされたバンドルをコピー.
+        # 関連付けられたバンドルターゲットを持つ静的ライブラリに依存関係が存在し、両方とも別のプロジェクトに存在する場合に便利らしい
+#    dependencies:
+#      - framework: PredictiveSDK-Debug.xcframework
+
+    # XcodeでいうPROJECTの"Build Settings"の部分
+    settings:
+      base:
+        # MetalというXcodeのデバッグ情報の有効可否. Metalの参考は以下（使ったことはない）
+        # https://developer.apple.com/jp/metal/tools/
+        MTL_ENABLE_DEBUG_INFO: INCLUDE_SOURCE
+        # 組み込み的に言うとコンパイルスイッチの定義名を設定できる
+        SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+        # コンパイルの最適化設定. -Onone は最適化なし(デフォルト値なので設定しなくても大丈夫かも)
+        SWIFT_OPTIMIZATION_LEVEL: -Onone
+        # アプリ名
+        BUNDLE_DISPLAY_NAME: "DeadlineNotifier Dev"
+        # アプリアイコン. 取り込んでいるリソース名を設定
+#        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon-dev
+        
+      # "Build Configration"の設定. こちらで各configの設定を行う
+      configs:
+        Debug:
+          # codeSignがXcode管理かどうかの設定. "Automatically manage signing"の部分
+          CODE_SIGN_STYLE: Auto
+          # AppleDeveloperのチーム設定. TeamIDを設定する
+          DEVELOPMENT_TEAM: 937YVNJH2A
+          # bundleID
+          PRODUCT_BUNDLE_IDENTIFIER: jp.deadlinenotifier.dev
+          # プロビジョニングプロファイル名
+#          PROVISIONING_PROFILE_SPECIFIER: DeadlineNotifier-Dev
+          # "Signing & Capabilities"でなにか設定した際に作られるentitlementsを設定
+#          CODE_SIGN_ENTITLEMENTS: BestByDateApp/BestByDateApp.entitlements
+          
+    # テストに使用するためのスキーム設定を構築できる。課金テストに使う.storekitの設定とかができる
+#    scheme:
+#      storeKitConfiguration: "PBaseNavi/Configurations/PurchaseConfigration.storekit"
+
+  # 同上のため説明は割愛
+  Release:
+    templates:
+      - Base
+    configs:
+      Release: release
+#    dependencies:
+#      - framework: XXXSDK.xcframework
+    settings:
+      base:
+        CODE_SIGN_STYLE: Manual
+        # ↓の設定をするとAppleシリコンのPCでシミュレータ起動ができなくなる場合があるらしい. 以下参考
+        # https://note.com/fromkk/n/naf0c0d3e5b6c
+#        EXCLUDED_ARCHS[sdk=iphonesimulator*]: arm64
+        OTHER_LDFLAGS: $(inherited) $(OTHER_LDFLAGS) -ObjC
+        # -O はコンパイル最適化で、コンパイルを高速化してくれる
+        SWIFT_OPTIMIZATION_LEVEL: -O
+        DEVELOPMENT_TEAM: 937YVNJH2A
+        # CodeSignに使用する証明書を設定.
+#        CODE_SIGN_IDENTITY: Apple Distribution
+        # Release用のentitlementsが必要になる
+#        CODE_SIGN_ENTITLEMENTS: BestByDateApp/BestByDateApp.entitlements
+        BUNDLE_DISPLAY_NAME: "DeadlineNotifier"
+      configs:
+        Release:
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: RELEASE
+          PRODUCT_BUNDLE_IDENTIFIER: jp.deadlinenotifier
+          PROVISIONING_PROFILE_SPECIFIER: DeadlineNotifier
+          
+# templates プロパティを使用して通常のターゲットから参照できるテンプレート.設定方法はターゲットと同様
+targetTemplates:
+  Base:
+    platform: iOS
+    settings:
+      base:
+        # アプリ全体の基準色. AccentColorはAssetsにデフォルトで存在するのでそこで色を変える
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        # PreviewProviderで使用するAssetsのパス
+        DEVELOPMENT_ASSET_PATHS: '"BestByDateApp/Preview Content"'
+        # フレームワークでモジュールを持つ場合にモジュールのあるフレームワークのパスを指定する場所
+        FRAMEWORK_SEARCH_PATHS:
+          - $(inherited)
+          - $(PROJECT_DIR)
+        INFOPLIST_FILE: BestByDateApp/Info.plist
+        # コンパイル時のSwiftVersion
+        SWIFT_VERSION: '5.0'
+        # デバッグ情報のフォーマット種別. FirebaseCrashlyticsなど、決まったフォーマットが必要な場合は設定必要
+#        DEBUG_INFORMATION_FORMAT: dwarf-with-dsym
+        # サポートiOSの設定
+        IPHONEOS_DEPLOYMENT_TARGET: '16.0'
+        # IEEE754標準に違反する可能性のある浮動小数点演算の最適化を有効にし、単精度および半精度浮動小数点の数学関数の高精度バリアントを無効にする
+        MTL_FAST_MATH: 'YES'
+        # ビルドプロセスの一部としてワークスペース構成の検証チェックを行う
+        VALIDATE_WORKSPACE: 'YES'
+        # アプリの対象となるOS. 以下参考
+        # https://zenn.dev/treastrain/articles/4a6a2765e996ae5396ae
+        TARGETED_DEVICE_FAMILY: 1
+#    dependencies:
+#      - package: Firebase
+#        product: FirebaseMessaging
+        
+    # ビルドフェーズの前に実行されるビルドスクリプト.
+    # 例えばSwiftLintを導入している場合はここにscriptを書くか、scriptファイルを指定すれば、ビルド時にLintが発動してくれる
+#    prebuildScripts:
+#      - name: SwiftLint
+#        runOnlyWhenInstalling: false
+#        script: scripts/run-swiftlint.sh
+#        shell: /bin/sh
+
+    # ビルドフェーズの後に実行されるビルドスクリプト.
+    # 例えばFirebaseCrashlyticsはGOOGLE_APP_IDが読み込まれた後に指定されたscriptを実行する必要があるため、読み込みが終わった後に動作されるpostで設定する必要がある
+#    postbuildScripts:
+#      - name: firebase-crashlytics-script
+#        inputFiles:
+#          - ${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}
+#          - $(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)
+#        runOnlyWhenInstalling: false
+#        script: '"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run"'
+#        shell: /bin/sh
+    
+    # ターゲットのソースディレクトリに対する設定. 設定できる項目は以下を参照
+    # https://github.com/yonaskolb/XcodeGen/blob/master/Docs/ProjectSpec.md#sources
+    sources:
+      - name: BestByDateApp
+        path: BestByDateApp
+#      - path: GPX
+#        excludes:
+#          - "**/.gitkeep"
+
+    # プロダクトタイプを設定. 特定のタイプにデフォルトのビルド設定が適用される. 詳細は以下参照
+    # https://github.com/yonaskolb/XcodeGen/blob/master/Docs/ProjectSpec.md#product-type
+    # 基本的にはapplicationを設定でよさそう. 他設定は多すぎて調べてない
+    type: application
+    
+    # Info.plistはXcodeに内包されているため生成の必要がある. 以下のように設定しておくと、Info.plistがない場合に自動で生成してくれる
+    # その代わり、個別で設定しないといけない項目もあるため注意. 詳細は以下参照
+    # https://github.com/yonaskolb/XcodeGen/blob/master/Docs/ProjectSpec.md#target の"plist"
+    info:
+      path: BestByDateApp/Info.plist
+#      properties:
+#        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+#        UILaunchStoryboardName: LaunchScreen
+
+# 上記のターゲット上のスキーム設定よりも詳細な制御をしたい場合に使用. 詳細は以下参照
+# https://github.com/yonaskolb/XcodeGen/blob/master/Docs/ProjectSpec.md#scheme
+schemes:
+  Debug:
+    build:
+      targets:
+        Debug: all
+#    test:
+#      targets:
+#       - DebugTests
+    archive:
+      config: Debug
+  Release:
+    build:
+      targets:
+          Release: all
+    run:
+      # run時はreleaseで起動
+      config: Release
