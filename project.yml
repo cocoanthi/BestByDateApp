@@ -193,9 +193,9 @@ targetTemplates:
     # https://github.com/yonaskolb/XcodeGen/blob/master/Docs/ProjectSpec.md#target の"plist"
     info:
       path: BestByDateApp/Info.plist
-#      properties:
-#        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
-#        UILaunchStoryboardName: LaunchScreen
+      properties:
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        UILaunchStoryboardName: LaunchScreen
 
 # 上記のターゲット上のスキーム設定よりも詳細な制御をしたい場合に使用. 詳細は以下参照
 # https://github.com/yonaskolb/XcodeGen/blob/master/Docs/ProjectSpec.md#scheme
