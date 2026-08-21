@@ -2,7 +2,9 @@
 
 ※現在サーバー停止のため、アプリは起動するものの通信できません。
 BestByDateAppは、SwiftUIを用いた賞味期限管理アプリです。
-APIはAWSを使用しています。
+APIはAWSを使用しています。（主にAWS学習用に作成しました）
+
+https://github.com/user-attachments/assets/4e14fb1c-a61d-42e6-81fd-8cad883944b2
 
 ## 主な機能
 - 賞味期限アイテムの登録・編集・削除
